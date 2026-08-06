@@ -3,146 +3,213 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#0b0d0f">
+  <meta name="theme-color" content="#17182b">
   <meta name="color-scheme" content="dark">
-  <title>达芬七｜SuisPasDaVinci</title>
-  <meta name="description" content="达芬七的个人主页。加拿大十年，非科班程序员，做AI工具、自动化、小产品，也写海外生活。">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="达芬七｜SuisPasDaVinci">
-  <meta property="og:description" content="不卖成功学。做点能跑的东西，写点不太圆滑的话。">
-  <meta property="og:url" content="https://suispasdavinci.com/">
-  <meta property="og:image" content="https://suispasdavinci.com/assets/og-card.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:creator" content="@davinci_seven">
+  <title>达芬七｜Suis Pas Da Vinci</title>
+  <meta name="description" content="达芬七的个人主页。加拿大十年，做本地化自动化、AI工具、小产品和一些能跑起来的实验。">
   <link rel="canonical" href="https://suispasdavinci.com/">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="达芬七｜Suis Pas Da Vinci">
+  <meta property="og:title" content="一个普通人，把脑子里的东西一件件做出来。">
+  <meta property="og:description" content="本地AI、自动化、小产品、写作和一些有用的胡闹。">
+  <meta property="og:url" content="https://suispasdavinci.com/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="达芬七｜Suis Pas Da Vinci">
+  <meta name="twitter:description" content="一个普通人，把脑子里的东西一件件做出来。">
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="返回首页">
-      <span class="brand-mark">7</span>
-      <span class="brand-copy"><strong>达芬七</strong><small>SUIS PAS DAVINCI</small></span>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <div class="world-grid" aria-hidden="true"></div>
+
+  <header class="site-header shell">
+    <a class="brand" href="#top" aria-label="返回顶部">
+      <span class="brand-tile">七</span>
+      <span class="brand-name">SUIS PAS DA VINCI</span>
     </a>
-    <nav class="nav" aria-label="主导航">
+    <div class="header-status" aria-label="网站状态">
+      <span class="status-light"></span>
+      <span>ONLINE</span>
+    </div>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="#stages">选关</a>
       <a href="#work">作品</a>
       <a href="#about">关于</a>
-      <a href="https://articles.suispasdavinci.com/" data-articles>文章</a>
-      <a class="nav-cta" href="https://x.com/davinci_seven" target="_blank" rel="noopener noreferrer">X↗</a>
+      <a href="https://x.com/davinci_seven" target="_blank" rel="noopener noreferrer">X↗</a>
     </nav>
   </header>
 
-  <main id="top">
-    <section class="hero shell">
-      <div class="hero-copy reveal">
-        <p class="kicker"><span></span>MONTRÉAL · HUMAN-AI BUILDER</p>
-        <h1>我不是达芬奇。<br><em>但我什么都想做一点。</em></h1>
-        <p class="hero-lead">加拿大十年，非科班程序员，三个孩子的爹。白天做本地化和自动化，晚上拿AI折腾工具、网站、游戏和一堆不太像正经副业的东西。</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#work">看看我做的东西</a>
-          <a class="button button-ghost" href="https://x.com/davinci_seven" target="_blank" rel="noopener noreferrer">去X找我↗</a>
+  <main id="main">
+    <section class="hero shell" id="top">
+      <div class="hero-screen pixel-panel">
+        <div class="screen-noise" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="system-line"><span>SYS</span>MONTREAL / PLAYER 01</p>
+          <h1>一个普通人，<br>把脑子里的东西<br><em>一件件做出来。</em></h1>
+          <p class="hero-lead">加拿大十年。非科班程序员，做本地化自动化、AI工具、小产品，也写普通人在海外重新开局的账。</p>
+          <div class="hero-actions">
+            <a class="pixel-button primary" href="#stages"><span>▶</span>PRESS START</a>
+            <a class="pixel-button" href="https://github.com/davinci-seven" target="_blank" rel="noopener noreferrer">OPEN GITHUB↗</a>
+          </div>
+        </div>
+
+        <aside class="player-card" aria-label="玩家资料">
+          <div class="card-label">PLAYER CARD</div>
+          <div class="avatar-pixel" aria-hidden="true">
+            <span class="avatar-eye left"></span>
+            <span class="avatar-eye right"></span>
+            <span class="avatar-mouth"></span>
+          </div>
+          <dl>
+            <div><dt>NAME</dt><dd>达芬七</dd></div>
+            <div><dt>CLASS</dt><dd>TECH SPECIALIST</dd></div>
+            <div><dt>BASE</dt><dd>MONTRÉAL</dd></div>
+            <div><dt>STATUS</dt><dd class="live">STILL SHIPPING</dd></div>
+          </dl>
+          <div class="stat-row"><span>AUTOMATION</span><i><b style="width:88%"></b></i></div>
+          <div class="stat-row"><span>LOCAL AI</span><i><b style="width:76%"></b></i></div>
+          <div class="stat-row"><span>NON-SENSE</span><i><b style="width:96%"></b></i></div>
+        </aside>
+      </div>
+
+      <div class="ticker" aria-label="个人关键词">
+        <span>10Y IN CANADA</span><i>◆</i><span>LOCALIZATION</span><i>◆</i><span>PYTHON</span><i>◆</i><span>LOCAL AI</span><i>◆</i><span>BUILD IN PUBLIC</span>
+      </div>
+    </section>
+
+    <section class="stages shell section" id="stages">
+      <header class="section-head reveal">
+        <div><span>01</span><p>SELECT A STAGE</p></div>
+        <h2>你想从哪儿进？</h2>
+      </header>
+
+      <div class="stage-grid">
+        <a class="stage-card reveal" href="#work">
+          <span class="stage-number">01</span>
+          <div class="stage-icon icon-project" aria-hidden="true"><i></i><i></i><i></i></div>
+          <h3>我做的东西</h3>
+          <p>开源工具、自动化、本地AI和一些先做出来再说的实验。</p>
+          <b>ENTER PROJECTS →</b>
+        </a>
+
+        <a class="stage-card reveal" href="https://articles.suispasdavinci.com/tools/run-worth/" target="_blank" rel="noopener noreferrer">
+          <span class="stage-number">02</span>
+          <div class="stage-icon icon-tool" aria-hidden="true">68</div>
+          <h3>能直接玩的工具</h3>
+          <p>润值计算器、移民判断工具，以及后面会继续长出来的小东西。</p>
+          <b>OPEN TOOLS ↗</b>
+        </a>
+
+        <a class="stage-card reveal" href="https://articles.suispasdavinci.com" target="_blank" rel="noopener noreferrer">
+          <span class="stage-number">03</span>
+          <div class="stage-icon icon-article" aria-hidden="true"><i></i><i></i><i></i></div>
+          <h3>我写的东西</h3>
+          <p>加拿大、AI、普通人的重启，还有一些不适合写成鸡汤的东西。</p>
+          <b>READ ARTICLES ↗</b>
+        </a>
+
+        <a class="stage-card reveal" href="#about">
+          <span class="stage-number">04</span>
+          <div class="stage-icon icon-about" aria-hidden="true">?</div>
+          <h3>这人到底谁</h3>
+          <p>从Excel混进程序员岗位，一个不太标准的技术工作者。</p>
+          <b>MEET PLAYER →</b>
+        </a>
+      </div>
+    </section>
+
+    <section class="quest shell section" aria-labelledby="quest-title">
+      <div class="quest-card reveal">
+        <div class="quest-copy">
+          <p>ACTIVE QUEST</p>
+          <h2 id="quest-title">把本地AI做成普通人也敢双击的东西。</h2>
+          <span>8G显卡、本地生图、语音克隆、视频和自动化。少一点环境地狱，多一点“下载以后真能跑”。</span>
+        </div>
+        <div class="quest-state">
+          <div><span>PROGRESS</span><strong>76%</strong></div>
+          <i><b></b></i>
+          <small>LAST SAVE: <time id="local-time">--:--</time> MTL</small>
         </div>
       </div>
+    </section>
 
-      <div class="hero-panel reveal" aria-label="个人状态">
-        <div class="panel-top"><span>PROFILE.EXE</span><i></i><i></i><i></i></div>
-        <div class="pixel-face" aria-hidden="true">
-          <span class="eye eye-left"></span><span class="eye eye-right"></span><span class="mouth"></span>
+    <section class="work shell section" id="work">
+      <header class="section-head reveal">
+        <div><span>02</span><p>SELECTED WORK</p></div>
+        <h2>已经跑起来的几件事。</h2>
+      </header>
+
+      <div class="work-list">
+        <a class="work-row reveal" href="https://github.com/davinci-seven/davinci-zimage-ui" target="_blank" rel="noopener noreferrer">
+          <span class="work-index">01</span>
+          <div><p>LOCAL IMAGE / OPEN SOURCE</p><h3>DaVinci Z-Image UI</h3></div>
+          <em>把命令、环境和参数压成普通人也敢点的本地生图工作台。</em>
+          <b>VIEW↗</b>
+        </a>
+        <a class="work-row reveal" href="https://github.com/davinci-seven/GeminiWatermarkTool" target="_blank" rel="noopener noreferrer">
+          <span class="work-index">02</span>
+          <div><p>UTILITY / DESKTOP</p><h3>Gemini Watermark Tool</h3></div>
+          <em>批量处理图片水印。目标很单纯：别让重复劳动继续浪费人命。</em>
+          <b>VIEW↗</b>
+        </a>
+        <a class="work-row reveal" href="https://articles.suispasdavinci.com/tools/run-worth/" target="_blank" rel="noopener noreferrer">
+          <span class="work-index">03</span>
+          <div><p>TINY PRODUCT / WEB</p><h3>润值计算器</h3></div>
+          <em>不替人决定移不移民，只把钱、时间、环境、关系和未来摊开算一遍。</em>
+          <b>PLAY↗</b>
+        </a>
+        <a class="work-row reveal" href="https://github.com/davinci-seven" target="_blank" rel="noopener noreferrer">
+          <span class="work-index">04</span>
+          <div><p>LAB / CONTINUOUS</p><h3>更多半成品</h3></div>
+          <em>有些能用，有些离谱。共同点是都留下了代码，而不只是一个想法。</em>
+          <b>ALL↗</b>
+        </a>
+      </div>
+    </section>
+
+    <section class="about shell section" id="about">
+      <header class="section-head reveal">
+        <div><span>03</span><p>PLAYER STORY</p></div>
+        <h2>我不是科班，也没准备当导师。</h2>
+      </header>
+
+      <div class="about-grid">
+        <div class="dialogue pixel-panel reveal">
+          <span class="dialogue-corner">七</span>
+          <p>以前做测试、做本地化，后来靠Excel、脚本和一句“这玩意能不能自动做”，慢慢混进了程序员岗位。</p>
+          <p>现在做技术，也折腾AI。喜欢把复杂的东西拆小，把难用的东西改到能用。</p>
+          <p>写作也是同一件事：把那些听起来很大的词，放回普通人的工资单、家庭和日常里。</p>
+          <i class="dialogue-next">▼</i>
         </div>
-        <dl class="stats">
-          <div><dt>LOCATION</dt><dd>MONTRÉAL</dd></div>
-          <div><dt>MODE</dt><dd>BUILDING</dd></div>
-          <div><dt>STACK</dt><dd>PYTHON+AI</dd></div>
-          <div><dt>LOCAL TIME</dt><dd id="montreal-time">--:--:--</dd></div>
-        </dl>
-        <p class="terminal-line"><span>&gt;</span><span id="status-text">正在把想法变成能点的东西。</span><b>_</b></p>
+
+        <aside class="inventory reveal">
+          <p>INVENTORY</p>
+          <ul>
+            <li><span>01</span><b>Python / Automation</b></li>
+            <li><span>02</span><b>Localization Tech</b></li>
+            <li><span>03</span><b>Local AI / GPU</b></li>
+            <li><span>04</span><b>Writing / X</b></li>
+            <li><span>05</span><b>Three Kids / No Sleep</b></li>
+          </ul>
+        </aside>
       </div>
     </section>
 
-    <section class="marquee" aria-label="关键词">
-      <div>AI TOOLS✦AUTOMATION✦LOCAL MODELS✦CANADA✦WRITING✦WEIRD LITTLE PRODUCTS✦</div>
-    </section>
-
-    <section class="section shell" id="work">
-      <div class="section-head reveal">
-        <div><p class="section-index">01 / SELECTED WORK</p><h2>最近在折腾</h2></div>
-        <p>不按公司官网那套写“解决方案”。能用、好玩、有人愿意点开，就算一件作品。</p>
+    <section class="continue shell section reveal">
+      <p>CONTINUE?</p>
+      <h2>这局还没打完。</h2>
+      <div>
+        <a class="pixel-button primary" href="https://x.com/davinci_seven" target="_blank" rel="noopener noreferrer">FOLLOW ON X↗</a>
+        <a class="pixel-button" href="https://github.com/davinci-seven" target="_blank" rel="noopener noreferrer">OPEN GITHUB↗</a>
       </div>
-
-      <div class="work-grid">
-        <a class="work-card card-feature reveal" href="https://articles.suispasdavinci.com/tools/run-worth/" data-articles>
-          <span class="card-num">001</span>
-          <div class="score-demo"><small>润前体检</small><strong>68</strong><em>半只脚在门口</em></div>
-          <div class="card-copy"><p>INTERACTIVE TOOL</p><h3>润值计算器</h3><span>把移民这件容易吵起来的事，拆成钱、时间、环境、关系和未来五笔账。</span></div>
-          <b class="card-arrow">↗</b>
-        </a>
-
-        <a class="work-card card-ai reveal" href="https://github.com/davinci-seven/davinci-zimage-ui" target="_blank" rel="noopener noreferrer">
-          <span class="card-num">002</span>
-          <div class="code-window"><i></i><i></i><i></i><pre><code>$ local-image --uncensored
-[OK] 8GB VRAM
-[OK] 42 styles
-[RUN] make something weird</code></pre></div>
-          <div class="card-copy"><p>OPEN SOURCE</p><h3>本地AI出图工厂</h3><span>让普通8GBN卡也能跑起来的本地生图工具和完整工作流。</span></div>
-          <b class="card-arrow">↗</b>
-        </a>
-
-        <a class="work-card card-game reveal" href="https://articles.suispasdavinci.com/games/survived-another-month/" data-articles>
-          <span class="card-num">003</span>
-          <div class="game-demo"><div class="game-sky"><span>☁</span><span>☁</span></div><div class="game-ground"><b>♟</b><i>$$$</i></div></div>
-          <div class="card-copy"><p>MINI GAME</p><h3>本月又活下来了</h3><span>接收入，躲账单。一个中年人看了会笑，笑完有点想哭的小游戏。</span></div>
-          <b class="card-arrow">↗</b>
-        </a>
-
-        <a class="work-card card-lab reveal" href="https://github.com/davinci-seven" target="_blank" rel="noopener noreferrer">
-          <span class="card-num">004</span>
-          <div class="lab-demo"><span>LAB</span><strong>17</strong><small>REPOS<br>AND COUNTING</small></div>
-          <div class="card-copy"><p>EXPERIMENTS</p><h3>达芬七实验室</h3><span>自动化脚本、内容系统、AI工作流和那些“先做出来再说”的项目。</span></div>
-          <b class="card-arrow">↗</b>
-        </a>
-      </div>
-    </section>
-
-    <section class="section shell about" id="about">
-      <div class="about-title reveal">
-        <p class="section-index">02 / ABOUT</p>
-        <h2>一个不太标准的<br>技术工作者。</h2>
-      </div>
-      <div class="about-copy reveal">
-        <p class="about-big">从功能测试、本地化一路混进程序员岗位。没系统学过计算机，但很擅长发现一件破事，然后写点东西让它以后别再烦我。</p>
-        <p>Python、自动化、本地AI、内容产品，是我现在最常用的几把锤子。这个网站不打算证明我多专业，只想把真正做过的东西摆出来。</p>
-        <div class="facts">
-          <span><b>10+</b>年加拿大生活</span>
-          <span><b>3</b>个孩子</span>
-          <span><b>∞</b>个挖到一半的坑</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section shell outposts">
-      <div class="section-head reveal">
-        <div><p class="section-index">03 / OUTPOSTS</p><h2>其他据点</h2></div>
-        <p>根站只负责我是谁。长文、代码和小游戏，各自去该去的地方。</p>
-      </div>
-      <div class="outpost-list">
-        <a class="outpost reveal" href="https://articles.suispasdavinci.com/" data-articles><span>01</span><strong>文章仓库</strong><em>加拿大、AI、普通人的重启判断</em><b>ARTICLES↗</b></a>
-        <a class="outpost reveal" href="https://github.com/davinci-seven" target="_blank" rel="noopener noreferrer"><span>02</span><strong>GitHub</strong><em>代码、工具和还没写完的东西</em><b>CODE↗</b></a>
-        <a class="outpost reveal" href="https://x.com/davinci_seven" target="_blank" rel="noopener noreferrer"><span>03</span><strong>X / Twitter</strong><em>日常胡说、项目进度和评论区吵架</em><b>FOLLOW↗</b></a>
-      </div>
-    </section>
-
-    <section class="closing shell reveal">
-      <p>有个奇怪的想法？</p>
-      <h2>先做出来。<br><span>别开会。</span></h2>
-      <a class="button button-primary" href="https://x.com/davinci_seven" target="_blank" rel="noopener noreferrer">来聊聊↗</a>
     </section>
   </main>
 
-  <footer class="footer shell">
-    <p>©<span id="year"></span>达芬七｜BUILT WITH TOO MANY TABS OPEN.</p>
-    <a href="#top">BACK TO TOP↑</a>
+  <footer class="site-footer shell">
+    <p>©<span id="year"></span>达芬七</p>
+    <p>BUILT IN MONTRÉAL · NO COINS REQUIRED</p>
   </footer>
-  <script src="/app.js" defer></script>
 </body>
 </html>
