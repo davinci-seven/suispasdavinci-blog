@@ -34,11 +34,31 @@
     items.forEach(function (item) { observer.observe(item); });
   }
 
+  function correctProjectCredits() {
+    var row = document.querySelector('a[href*="GeminiWatermarkTool"]');
+    if (!row) return;
+
+    row.href = 'https://github.com/davinci-seven/wechat-article-pipeline';
+
+    var meta = row.querySelector('div p');
+    var title = row.querySelector('div h3');
+    var description = row.querySelector('em');
+    var action = row.querySelector(':scope > b');
+
+    if (meta) meta.textContent = 'CONTENT PIPELINE / WINDOWS';
+    if (title) title.textContent = 'WeChat Article Pipeline';
+    if (description) {
+      description.textContent = '把Markdown、配图、公众号HTML、复制预览、手机长截图和完整性检查串成一条可复用流程。';
+    }
+    if (action) action.textContent = 'VIEW↗';
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     var year = document.getElementById('year');
     if (year) year.textContent = String(new Date().getFullYear());
     updateClock();
     window.setInterval(updateClock, 30000);
+    correctProjectCredits();
     revealSections();
   });
 })();
