@@ -1,32 +1,24 @@
-# suispasdavinci.com新首页
+# 达芬七个人主页
 
-这是独立的纯静态个人主页，不依赖Hexo，也不修改现有文章、工具和小游戏。
+`suispasdavinci.com`的独立静态主页，与现有Hexo文章站分开部署。
 
-推荐部署结构：
+## 这一版
 
-- `suispasdavinci.com`：本目录`home/`
-- `articles.suispasdavinci.com`：仓库根目录现有Hexo站
-- 游戏暂时继续放在文章站的`/games/`，以后再拆`play.suispasdavinci.com`
+- Fable方向的像素游戏界面
+- 使用“达芬七Seven”正式角色：银灰刺发、黑西装、红领带、枫叶胸针
+- 首屏角色可用`A/D`或左右方向键移动
+- 靠近作品、工具、文章、关于入口后，按`Enter`进入
+- 手机端提供长按左右移动和确认按钮
+- X账号统一为`@davinci_seven`
+- 所有资源使用相对路径，可直接双击`index.html`预览
 
-## Vercel
+## 文件
 
-从同一个GitHub仓库新建一个Vercel Project，Root Directory设为`home`，Framework Preset选`Other`，Build Command留空，Output Directory留空。
+- `index.html`：页面结构与内容
+- `styles.css`：V2页面基础视觉与响应式布局
+- `game-v3.css`：可玩场景、达芬七角色和动态效果
+- `app.js`：时钟与滚动入场
+- `game-v3.js`：角色移动、入口判定、键盘与触摸控制
+- 角色由CSS绘制：银灰刺发、黑西装、红领带和枫叶胸针，不依赖额外位图。
 
-现有Hexo Project继续使用仓库根目录，域名改为`articles.suispasdavinci.com`。确认二级域名可访问后，再把根域名切到新Project。
-
-## 本地预览
-
-```bash
-cd home
-python -m http.server 8080
-```
-
-访问`http://localhost:8080`。
-
-## 切换前检查
-
-- 根站所有项目链接可打开
-- `articles.suispasdavinci.com`已绑定并完成HTTPS
-- 旧文章URL是否需要在根站做301，视搜索流量决定
-- Open Graph图片可访问
-- 手机宽度375px无横向滚动
+部署方式见`DEPLOY.md`。
