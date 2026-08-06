@@ -18,7 +18,9 @@
   <meta name="twitter:description" content="一个普通人，把脑子里的东西一件件做出来。">
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./game-v3.css">
   <script src="./app.js" defer></script>
+  <script src="./game-v3.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到正文</a>
@@ -43,34 +45,83 @@
 
   <main id="main">
     <section class="hero shell" id="top">
-      <div class="hero-screen pixel-panel">
+      <div class="hero-screen pixel-panel" data-game-console tabindex="-1">
         <div class="screen-noise" aria-hidden="true"></div>
         <div class="hero-copy">
           <p class="system-line"><span>SYS</span>MONTREAL / PLAYER 01</p>
           <h1>一个普通人，<br>把脑子里的东西<br><em>一件件做出来。</em></h1>
           <p class="hero-lead">加拿大十年。非科班程序员，做本地化自动化、AI工具、小产品，也写普通人在海外重新开局的账。</p>
           <div class="hero-actions">
-            <a class="pixel-button primary" href="#stages"><span>▶</span>PRESS START</a>
+            <button class="pixel-button primary" type="button" data-game-start><span>▶</span>PRESS START</button>
             <a class="pixel-button" href="https://github.com/davinci-seven" target="_blank" rel="noopener noreferrer">OPEN GITHUB↗</a>
           </div>
+          <p class="keyboard-hint"><kbd>A</kbd><kbd>D</kbd>MOVE　<kbd>ENTER</kbd>ENTER</p>
         </div>
 
-        <aside class="player-card" aria-label="玩家资料">
-          <div class="card-label">PLAYER CARD</div>
-          <div class="avatar-pixel" aria-hidden="true">
-            <span class="avatar-eye left"></span>
-            <span class="avatar-eye right"></span>
-            <span class="avatar-mouth"></span>
+        <aside class="game-console" aria-label="达芬七可互动任务地图">
+          <div class="game-viewport" data-game-viewport>
+            <div class="game-sky" aria-hidden="true"></div>
+            <div class="game-city" aria-hidden="true"></div>
+            <div class="game-ground" aria-hidden="true"></div>
+
+            <div class="world-track" data-world-track>
+              <button class="world-station station-projects" type="button" data-station="0" aria-label="选择作品关卡">
+                <i>01</i><strong>作品</strong><span>PROJECTS</span>
+              </button>
+              <button class="world-station station-tools" type="button" data-station="1" aria-label="选择工具关卡">
+                <i>02</i><strong>工具</strong><span>TOOLS</span>
+              </button>
+              <button class="world-station station-articles" type="button" data-station="2" aria-label="选择文章关卡">
+                <i>03</i><strong>文章</strong><span>ARTICLES</span>
+              </button>
+              <button class="world-station station-about" type="button" data-station="3" aria-label="选择关于关卡">
+                <i>04</i><strong>关于</strong><span>ABOUT</span>
+              </button>
+
+              <div class="player-character" data-player aria-label="达芬七角色：银灰刺发、黑西装、红领带和枫叶胸针">
+                <span class="player-shadow" aria-hidden="true"></span>
+                <span class="seven-sprite" aria-hidden="true">
+                  <i class="seven-hair"><b></b></i>
+                  <i class="seven-head"><b class="eye-left"></b><b class="eye-right"></b><b class="blush-left"></b><b class="blush-right"></b></i>
+                  <i class="seven-body"><b class="seven-shirt"></b><b class="seven-tie"></b><b class="seven-maple">✦</b></i>
+                  <i class="seven-arm arm-left"></i><i class="seven-arm arm-right"></i>
+                  <i class="seven-leg leg-left"></i><i class="seven-leg leg-right"></i>
+                </span>
+                <span class="player-name">SEVEN</span>
+              </div>
+            </div>
+
+            <div class="character-label">
+              <span>PLAYER 01</span>
+              <strong>达芬七 / SEVEN</strong>
+            </div>
+
+            <div class="mission-panel" aria-live="polite">
+              <span>NEARBY MISSION <b data-game-count>01 / 04</b></span>
+              <strong data-game-title>PROJECTS</strong>
+              <p data-game-description>开源工具、自动化、本地AI，以及已经跑起来的实验。</p>
+              <i class="mission-meter"><b data-game-meter></b></i>
+              <small data-proximity-hint>走近入口，按ENTER进入</small>
+            </div>
+
+            <div class="boot-message" data-boot-message>
+              <span>PLAYER READY</span>
+              <strong>PRESS START</strong>
+              <small>WASD / ← → MOVE</small>
+            </div>
           </div>
-          <dl>
-            <div><dt>NAME</dt><dd>达芬七</dd></div>
-            <div><dt>CLASS</dt><dd>TECH SPECIALIST</dd></div>
-            <div><dt>BASE</dt><dd>MONTRÉAL</dd></div>
-            <div><dt>STATUS</dt><dd class="live">STILL SHIPPING</dd></div>
-          </dl>
-          <div class="stat-row"><span>AUTOMATION</span><i><b style="width:88%"></b></i></div>
-          <div class="stat-row"><span>LOCAL AI</span><i><b style="width:76%"></b></i></div>
-          <div class="stat-row"><span>NON-SENSE</span><i><b style="width:96%"></b></i></div>
+
+          <div class="game-controls" aria-label="角色移动控制">
+            <button type="button" data-move-left aria-label="向左移动">◀<span>MOVE</span></button>
+            <button class="confirm" type="button" data-game-confirm><span>ENTER</span>进入关卡</button>
+            <button type="button" data-move-right aria-label="向右移动"><span>MOVE</span>▶</button>
+          </div>
+
+          <div class="player-strip">
+            <span>@davinci_seven</span>
+            <span>CLASS: BUILDER</span>
+            <span class="ready">STATUS: READY</span>
+          </div>
         </aside>
       </div>
 
@@ -86,7 +137,7 @@
       </header>
 
       <div class="stage-grid">
-        <a class="stage-card reveal" href="#work">
+        <a class="stage-card reveal" data-stage-id="projects" href="#work">
           <span class="stage-number">01</span>
           <div class="stage-icon icon-project" aria-hidden="true"><i></i><i></i><i></i></div>
           <h3>我做的东西</h3>
@@ -94,7 +145,7 @@
           <b>ENTER PROJECTS →</b>
         </a>
 
-        <a class="stage-card reveal" href="https://articles.suispasdavinci.com/tools/run-worth/" target="_blank" rel="noopener noreferrer">
+        <a class="stage-card reveal" data-stage-id="tools" href="https://articles.suispasdavinci.com/tools/run-worth/" target="_blank" rel="noopener noreferrer">
           <span class="stage-number">02</span>
           <div class="stage-icon icon-tool" aria-hidden="true">68</div>
           <h3>能直接玩的工具</h3>
@@ -102,7 +153,7 @@
           <b>OPEN TOOLS ↗</b>
         </a>
 
-        <a class="stage-card reveal" href="https://articles.suispasdavinci.com" target="_blank" rel="noopener noreferrer">
+        <a class="stage-card reveal" data-stage-id="articles" href="https://articles.suispasdavinci.com" target="_blank" rel="noopener noreferrer">
           <span class="stage-number">03</span>
           <div class="stage-icon icon-article" aria-hidden="true"><i></i><i></i><i></i></div>
           <h3>我写的东西</h3>
@@ -110,7 +161,7 @@
           <b>READ ARTICLES ↗</b>
         </a>
 
-        <a class="stage-card reveal" href="#about">
+        <a class="stage-card reveal" data-stage-id="about" href="#about">
           <span class="stage-number">04</span>
           <div class="stage-icon icon-about" aria-hidden="true">?</div>
           <h3>这人到底谁</h3>
