@@ -1,1 +1,44 @@
-(function(){const $=(s,r=document)=>r.querySelector(s);const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;const year=$('#year');if(year)year.textContent=new Date().getFullYear();const clock=$('#montreal-time');function tick(){if(!clock)return;clock.textContent=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Montreal',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date())}tick();setInterval(tick,1000);const statuses=['正在把想法变成能点的东西。','正在和一个本来不该存在的bug吵架。','今天又开了太多标签页。','先做出来。别开会。'];const status=$('#status-text');if(status)status.textContent=statuses[Math.floor(Math.random()*statuses.length)];if(!reduced&&'IntersectionObserver'in window){const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');io.unobserve(entry.target)}}),{threshold:.12});$$('.reveal').forEach(el=>io.observe(el))}else{$$('.reveal').forEach(el=>el.classList.add('is-visible'))}const marquee=$('.marquee div');if(marquee)marquee.textContent+=marquee.textContent;$$('a[href^="#"]').forEach(link=>link.addEventListener('click',event=>{const target=$(link.getAttribute('href'));if(!target)return;event.preventDefault();target.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'})}));})();
+(function () {
+  'use strict';
+
+  function updateClock() {
+    var node = document.getElementById('local-time');
+    if (!node) return;
+    try {
+      node.textContent = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'America/Toronto',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      }).format(new Date());
+    } catch (error) {
+      node.textContent = '--:--';
+    }
+  }
+
+  function revealSections() {
+    var items = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (item) { item.classList.add('is-visible'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+
+    items.forEach(function (item) { observer.observe(item); });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var year = document.getElementById('year');
+    if (year) year.textContent = String(new Date().getFullYear());
+    updateClock();
+    window.setInterval(updateClock, 30000);
+    revealSections();
+  });
+})();
