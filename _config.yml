@@ -19,6 +19,8 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: ':lang'
 skip_render:
+  - index.html
+  - cinema/**
   - games/survived-another-month/**
   - google*.html
 new_post_name: ':title.md'
