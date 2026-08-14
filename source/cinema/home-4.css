@@ -2,3 +2,18 @@
 @media(max-width:1050px){.rail{display:none}.topbar{grid-template-columns:1fr auto;padding:0 20px}.nav{display:none}.scene,.chapter.flip .scene,.hero .scene,.final .scene{grid-template-columns:1fr;gap:30px}.chapter.flip .copy,.chapter.flip .art{order:initial}.stage{align-items:flex-start;padding:96px 22px 28px;overflow:auto}.copy{max-width:780px;transform:none!important;opacity:1!important}.copy h1,.copy h2,.hero h1,.final h2{font-size:clamp(38px,9vw,62px)}.art{height:44vh;min-height:320px}.hero .art{order:-1}.hero-proof{grid-template-columns:repeat(3,1fr)}.score-head{grid-template-columns:1fr}.score-grid{grid-template-columns:repeat(2,1fr)}.score-card:last-child{grid-column:1/-1}.project-strip{grid-template-columns:1fr}.now-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.topbar{height:64px}.brand small{display:none}.top-cta{padding:9px 12px}.chapter{min-height:118vh}.chapter.short{min-height:108vh}.stage{padding:84px 16px 22px}.copy h1,.copy h2,.hero h1,.final h2{font-size:clamp(34px,11.5vw,50px)}.lead{font-size:14px;line-height:1.8}.quote{font-size:18px}.art{height:34vh;min-height:250px}.hero-proof{grid-template-columns:1fr}.hero-proof div{padding:10px 0;border-top:1px solid rgba(255,255,255,.1)}.chapter-no{display:none}.score-grid{grid-template-columns:1fr}.score-card:last-child{grid-column:auto}.now-grid{grid-template-columns:1fr}.seven-back{transform:scale(.72);transform-origin:right bottom}.monitor{left:12%;width:66%}.paper{width:44%;padding:14px}.paper b{font-size:17px}.p3{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.copy,.art,.score-card,.article-card{transform:none!important;opacity:1!important}}
+
+/* V9 cinematic artwork */
+.hero-art,.beijing-art,.montreal-art,.final-art{position:relative;background-repeat:no-repeat;background-size:cover;background-color:#0b0d0e;overflow:hidden;isolation:isolate}
+.hero-art{background-image:linear-gradient(90deg,rgba(7,9,12,.42) 0%,rgba(7,9,12,.08) 42%,transparent 70%),url('/cinema/img/hero-workspace.webp');background-position:62% center}
+.beijing-art{background-image:linear-gradient(90deg,rgba(35,31,29,.08),transparent 48%),url('/cinema/img/beijing-departure.webp');background-position:64% center}
+.montreal-art{background-image:linear-gradient(90deg,rgba(15,23,31,.08),transparent 50%),url('/cinema/img/montreal-arrival.webp');background-position:64% center}
+.final-art{background-image:linear-gradient(90deg,rgba(8,10,12,.18),transparent 50%),url('/cinema/img/final-montreal.webp');background-position:66% center}
+.hero-art>:not(.caption),.beijing-art>:not(.caption),.montreal-art>:not(.caption),.final-art>:not(.caption){display:none!important}
+.hero-art .caption,.beijing-art .caption,.montreal-art .caption,.final-art .caption{display:block!important;z-index:3}
+.hero-art:after,.beijing-art:after,.montreal-art:after,.final-art:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,transparent 58%,rgba(0,0,0,.22))}
+.hero-art{box-shadow:0 34px 90px rgba(0,0,0,.38)}
+.beijing-art,.montreal-art{box-shadow:0 30px 80px rgba(26,22,18,.18)}
+.final-art{box-shadow:0 34px 100px rgba(0,0,0,.42)}
+@media(max-width:1050px){.hero-art,.beijing-art,.montreal-art,.final-art{background-position:65% center}}
+@media(max-width:620px){.hero-art{background-position:69% center}.beijing-art,.montreal-art{background-position:70% center}.final-art{background-position:72% center}}
