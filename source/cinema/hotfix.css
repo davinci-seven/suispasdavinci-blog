@@ -1,0 +1,11 @@
+/* Emergency visual repair: real hero artwork, visible fallback scenes, clean wordmark. */
+body .hero-art{background-image:linear-gradient(90deg,rgba(7,9,12,.16) 0%,rgba(7,9,12,.02) 44%,transparent 72%),url('/cinema/img/hero-workspace.webp')!important;background-size:cover!important;background-position:center center!important;background-color:#0b0d0e!important;box-shadow:0 30px 90px rgba(0,0,0,.28)!important}
+body .hero-art:after{background:linear-gradient(180deg,transparent 72%,rgba(0,0,0,.14))!important}
+body .hero-art .caption{background:rgba(8,10,12,.58)!important}
+body .beijing-art{background:linear-gradient(180deg,#aaa7a1,#777b7a)!important}
+body .montreal-art{background:linear-gradient(180deg,#cbd9e3,#eef1f1)!important}
+body .final-art{background:#070a0e!important}
+body .beijing-art>:not(.caption),body .montreal-art>:not(.caption),body .final-art>:not(.caption){display:block!important}
+body .beijing-art:after,body .montreal-art:after,body .final-art:after{background:none!important}
+@media(max-width:1050px){body .hero-art{background-position:58% center!important}}
+@media(max-width:620px){body .hero-art{background-position:64% center!important}}
