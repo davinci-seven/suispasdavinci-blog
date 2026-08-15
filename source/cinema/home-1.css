@@ -1,3 +1,4 @@
+@import url('/cinema/hotfix.css');
 *{box-sizing:border-box}
 :root{--ink:#171613;--night:#0b0d0e;--red:#cf4937;--gold:#c8a064;--green:#8fb66e;--muted:#817a70;--ease:cubic-bezier(.2,.8,.2,1)}
 html{background:var(--night);scroll-behavior:smooth}body{margin:0;min-width:320px;background:var(--night);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}::selection{background:var(--red);color:#fff}
