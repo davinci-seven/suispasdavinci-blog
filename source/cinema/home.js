@@ -60,48 +60,7 @@ const counterObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>
   requestAnimationFrame(tick);
 })},{threshold:.55});
 document.querySelectorAll('[data-count]').forEach(el=>counterObserver.observe(el));
-addEventListener('resize',measure,{passive:true});addEventListener('load',measure,{once:true});measure();setTheme(0);requestAnimationFrame(frame);
-})();
-
-(function(){
-'use strict';
-const objectUrls=[];
-async function readPart(url){
-  const r=await fetch(url,{cache:'force-cache'});
-  if(!r.ok)throw new Error('artwork '+r.status+' '+url);
-  return (await r.text()).replace(/[^A-Za-z0-9+/=]/g,'');
-}
-function decodePart(b64){
-  const clean=b64.replace(/[^A-Za-z0-9+/=]/g,'');
-  const padded=clean+'='.repeat((4-clean.length%4)%4);
-  const raw=atob(padded);
-  const bytes=new Uint8Array(raw.length);
-  for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);
-  return bytes;
-}
-function partsToBlobUrl(parts){
-  const decoded=parts.map(decodePart);
-  const url=URL.createObjectURL(new Blob(decoded,{type:'image/webp'}));
-  objectUrls.push(url);
-  return url;
-}
-async function applyChunkedPhoto(selector,baseUrl,chunkCount,position){
-  const el=document.querySelector(selector);if(!el)return;
-  try{
-    const urls=[];
-    for(let i=0;i<chunkCount;i++)urls.push(baseUrl+'.'+i+'?v=20260815-6');
-    const parts=await Promise.all(urls.map(readPart));
-    const blobUrl=partsToBlobUrl(parts);
-    const probe=new Image();probe.src=blobUrl;await probe.decode();
-    el.style.setProperty('background-image','linear-gradient(180deg,rgba(0,0,0,.015),rgba(0,0,0,.08)),url("'+blobUrl+'")','important');
-    el.style.setProperty('background-size','cover','important');
-    el.style.setProperty('background-position',position||'center','important');
-    el.classList.add('photo-ready');
-  }catch(err){console.error('[Seven cinema] artwork failed:',selector,err)}
-}
-applyChunkedPhoto('.workflow-art','/cinema/img/workflow-automation.webp.b64',3,'54% center');
-applyChunkedPhoto('.ai-art','/cinema/img/ai-production.webp.b64',3,'56% center');
-applyChunkedPhoto('.writing-art','/cinema/img/writing-public.webp.b64',2,'63% center');
-applyChunkedPhoto('.final-art','/cinema/img/final-montreal-v11.webp.b64',2,'58% center');
-addEventListener('pagehide',()=>objectUrls.forEach(URL.revokeObjectURL),{once:true});
+addEventListener('resize',measure,{passive:true});
+addEventListener('load',measure,{once:true});
+measure();setTheme(0);requestAnimationFrame(frame);
 })();
