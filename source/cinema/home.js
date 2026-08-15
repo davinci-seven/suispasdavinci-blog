@@ -18,6 +18,7 @@ function setTheme(index){
   const dark=ch.dataset.theme==='dark';
   root.style.setProperty('--top-ink',dark?'#f2ecdf':'#191817');
   root.style.setProperty('--rail-ink',dark?'#f2ecdf':'#191817');
+  root.style.setProperty('--top-bg',dark?'rgba(9,10,11,.92)':'rgba(246,242,233,.94)');
   railNo.textContent=String(index+1).padStart(2,'0')+' / '+String(chapters.length).padStart(2,'0');
   railLabel.textContent=ch.dataset.label||'';
 }
