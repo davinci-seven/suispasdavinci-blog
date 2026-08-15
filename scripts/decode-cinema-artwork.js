@@ -47,5 +47,6 @@ function rebuildIndependent(name, chunkCount, outName = name) {
 rebuildJoined('beijing-departure', 2);
 rebuildJoined('montreal-arrival', 3);
 rebuildJoined('workflow-automation', 2);
+rebuildIndependent('ai-production', 3);
 rebuildJoined('writing-public', 4);
 rebuildIndependent('final-montreal-v11', 2, 'final-montreal-v11');
