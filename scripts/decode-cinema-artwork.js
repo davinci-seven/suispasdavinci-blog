@@ -14,7 +14,7 @@ function assertWebP(buf, name) {
   if (!ok) throw new Error(`Invalid WebP rebuilt for ${name} (${buf.length} bytes)`);
 }
 
-// These repair chunks are slices of ONE base64 string. Join first, decode once.
+// Repair chunks are slices of ONE base64 string. Join first, decode once.
 function rebuildJoined(name, chunkCount) {
   let b64 = '';
   for (let i = 0; i < chunkCount; i++) {
@@ -47,5 +47,5 @@ function rebuildIndependent(name, chunkCount, outName = name) {
 rebuildJoined('beijing-departure', 2);
 rebuildJoined('montreal-arrival', 3);
 rebuildJoined('workflow-automation', 2);
-rebuildIndependent('writing-public', 2);
+rebuildJoined('writing-public', 4);
 rebuildIndependent('final-montreal-v11', 2, 'final-montreal-v11');
