@@ -1,7 +1,8 @@
 /* Cinematic artwork layer — real images first, CSS drawings only as no-JS fallback. */
 body .brand-mark{display:none!important}
 body .hero-art,body .beijing-art,body .montreal-art,body .workflow-art,body .ai-art,body .writing-art,body .final-art{
-  background-repeat:no-repeat!important;background-size:cover!important;overflow:hidden!important;isolation:isolate;box-shadow:0 30px 90px rgba(0,0,0,.24)!important
+  background-repeat:no-repeat!important;background-size:cover!important;overflow:hidden!important;isolation:isolate;box-shadow:0 30px 90px rgba(0,0,0,.24)!important;
+  transform:none!important;will-change:auto!important;image-rendering:auto!important;
 }
 body .hero-art{background-image:linear-gradient(90deg,rgba(7,9,12,.10),rgba(7,9,12,.01) 55%),url('/cinema/img/hero-workspace.webp')!important;background-position:58% center!important;background-color:#0b0d0e!important}
 body .beijing-art{background-image:linear-gradient(180deg,rgba(20,18,16,.02),rgba(20,18,16,.08)),url('/cinema/img/beijing-departure.webp')!important;background-position:56% center!important;background-color:#aaa7a1!important}
@@ -9,8 +10,8 @@ body .montreal-art{background-image:linear-gradient(180deg,rgba(10,20,30,.01),rg
 body .workflow-art,body .ai-art,body .final-art{background-color:#0b0d0e!important}
 body .writing-art{background-color:#d8c6aa!important}
 body .hero-art>:not(.caption),body .beijing-art>:not(.caption),body .montreal-art>:not(.caption),body .workflow-art>:not(.caption),body .ai-art>:not(.caption),body .writing-art>:not(.caption),body .final-art>:not(.caption){display:none!important}
-body .hero-art:after,body .beijing-art:after,body .montreal-art:after,body .workflow-art:after,body .ai-art:after,body .writing-art:after,body .final-art:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,transparent 70%,rgba(0,0,0,.14))!important}
-body .caption{display:block!important;z-index:4!important;background:rgba(8,10,12,.56)!important}
+body .hero-art:after,body .beijing-art:after,body .montreal-art:after,body .workflow-art:after,body .ai-art:after,body .writing-art:after,body .final-art:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,transparent 76%,rgba(0,0,0,.10))!important}
+body .caption{display:block!important;z-index:4!important;background:rgba(8,10,12,.52)!important}
 body .writing-art.photo-ready{background-position:63% center!important}
 body .workflow-art.photo-ready{background-position:54% center!important}
 body .ai-art.photo-ready{background-position:56% center!important}
