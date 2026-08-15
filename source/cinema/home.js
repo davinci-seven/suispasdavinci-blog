@@ -1,4 +1,3 @@
-
 (function(){
 'use strict';
 const root=document.documentElement;
@@ -7,14 +6,9 @@ const railNo=document.getElementById('rail-number');
 const railLabel=document.getElementById('rail-label');
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let metrics=[],smoothY=scrollY,targetY=scrollY,pageRange=1,activeIndex=-1;
-
 const clamp=(n,a=0,b=1)=>Math.max(a,Math.min(b,n));
 function measure(){
-  metrics=chapters.map(ch=>({
-    top:ch.offsetTop,
-    range:Math.max(1,ch.offsetHeight-innerHeight),
-    center:ch.offsetTop+Math.max(1,ch.offsetHeight-innerHeight)*.5
-  }));
+  metrics=chapters.map(ch=>({top:ch.offsetTop,range:Math.max(1,ch.offsetHeight-innerHeight),center:ch.offsetTop+Math.max(1,ch.offsetHeight-innerHeight)*.5}));
   pageRange=Math.max(1,document.documentElement.scrollHeight-innerHeight);
 }
 function setTheme(index){
@@ -29,12 +23,10 @@ function setTheme(index){
 }
 function frame(){
   targetY=scrollY;
-  smoothY += (targetY-smoothY)*(reduced?1:.14);
+  smoothY+=(targetY-smoothY)*(reduced?1:.14);
   let nearest=0,dist=Infinity;
   metrics.forEach((m,i)=>{
-    const p=clamp((smoothY-m.top)/m.range);
-    const ch=chapters[i];
-    const enter=clamp(p*4);
+    const p=clamp((smoothY-m.top)/m.range),ch=chapters[i],enter=clamp(p*4);
     ch.style.setProperty('--p',p.toFixed(4));
     ch.style.setProperty('--copy-y',((.5-p)*42).toFixed(2)+'px');
     ch.style.setProperty('--copy-o',(.18+enter*.82).toFixed(3));
@@ -54,33 +46,42 @@ function frame(){
     const articleIn=clamp(p*2);
     ch.style.setProperty('--article-x',((1-articleIn)*26).toFixed(2)+'px');
     ch.style.setProperty('--article-o',(.2+articleIn*.8).toFixed(3));
-    const d=Math.abs(smoothY-m.center);
-    if(d<dist){dist=d;nearest=i}
+    const d=Math.abs(smoothY-m.center);if(d<dist){dist=d;nearest=i}
   });
   root.style.setProperty('--page-p',clamp(smoothY/pageRange).toFixed(4));
   root.style.setProperty('--page-h',(clamp(smoothY/pageRange)*100).toFixed(2)+'%');
-  setTheme(nearest);
-  requestAnimationFrame(frame);
+  setTheme(nearest);requestAnimationFrame(frame);
 }
-const counterObserver=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(!entry.isIntersecting||entry.target.dataset.done)return;
-    entry.target.dataset.done='1';
-    const end=Number(entry.target.dataset.count||0);
-    const suffix=entry.target.dataset.suffix||'';
-    const start=performance.now(),duration=1100;
-    function tick(now){
-      const t=clamp((now-start)/duration);
-      const e=1-Math.pow(1-t,4);
-      entry.target.textContent=Math.round(end*e)+suffix;
-      if(t<1)requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  });
-},{threshold:.55});
+const counterObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{
+  if(!entry.isIntersecting||entry.target.dataset.done)return;
+  entry.target.dataset.done='1';
+  const end=Number(entry.target.dataset.count||0),suffix=entry.target.dataset.suffix||'',start=performance.now(),duration=1100;
+  function tick(now){const t=clamp((now-start)/duration),e=1-Math.pow(1-t,4);entry.target.textContent=Math.round(end*e)+suffix;if(t<1)requestAnimationFrame(tick)}
+  requestAnimationFrame(tick);
+})},{threshold:.55});
 document.querySelectorAll('[data-count]').forEach(el=>counterObserver.observe(el));
+addEventListener('resize',measure,{passive:true});addEventListener('load',measure,{once:true});measure();setTheme(0);requestAnimationFrame(frame);
+})();
 
-addEventListener('resize',measure,{passive:true});
-addEventListener('load',measure,{once:true});
-measure(); setTheme(0); requestAnimationFrame(frame);
+(function(){
+'use strict';
+async function readB64(url){
+  const r=await fetch(url,{cache:'force-cache'});
+  if(!r.ok)throw new Error('artwork '+r.status+' '+url);
+  return (await r.text()).trim();
+}
+async function applyPhoto(selector,url,position){
+  const el=document.querySelector(selector);if(!el)return;
+  try{
+    const b64=await readB64(url);
+    el.style.setProperty('background-image','linear-gradient(180deg,rgba(0,0,0,.015),rgba(0,0,0,.10)),url("data:image/webp;base64,'+b64+'")','important');
+    el.style.setProperty('background-size','cover','important');
+    el.style.setProperty('background-position',position||'center','important');
+    el.classList.add('photo-ready');
+  }catch(err){console.warn('[Seven cinema]',selector,err)}
+}
+applyPhoto('.workflow-art','/cinema/img/workflow-automation.webp.b64','54% center');
+applyPhoto('.ai-art','/cinema/img/ai-production.webp.b64','56% center');
+applyPhoto('.writing-art','/cinema/img/writing-public.webp.b64','63% center');
+applyPhoto('.final-art','/cinema/img/final-montreal-v11.webp.b64','58% center');
 })();
