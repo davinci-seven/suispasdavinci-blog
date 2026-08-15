@@ -69,13 +69,19 @@ const objectUrls=[];
 async function readPart(url){
   const r=await fetch(url,{cache:'force-cache'});
   if(!r.ok)throw new Error('artwork '+r.status+' '+url);
-  return (await r.text()).replace(/\s+/g,'');
+  return (await r.text()).replace(/[^A-Za-z0-9+/=]/g,'');
 }
-function base64ToBlobUrl(b64){
-  const raw=atob(b64.replace(/\s+/g,''));
+function decodePart(b64){
+  const clean=b64.replace(/[^A-Za-z0-9+/=]/g,'');
+  const padded=clean+'='.repeat((4-clean.length%4)%4);
+  const raw=atob(padded);
   const bytes=new Uint8Array(raw.length);
   for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);
-  const url=URL.createObjectURL(new Blob([bytes],{type:'image/webp'}));
+  return bytes;
+}
+function partsToBlobUrl(parts){
+  const decoded=parts.map(decodePart);
+  const url=URL.createObjectURL(new Blob(decoded,{type:'image/webp'}));
   objectUrls.push(url);
   return url;
 }
@@ -83,9 +89,9 @@ async function applyChunkedPhoto(selector,baseUrl,chunkCount,position){
   const el=document.querySelector(selector);if(!el)return;
   try{
     const urls=[];
-    for(let i=0;i<chunkCount;i++)urls.push(baseUrl+'.'+i);
+    for(let i=0;i<chunkCount;i++)urls.push(baseUrl+'.'+i+'?v=20260815-6');
     const parts=await Promise.all(urls.map(readPart));
-    const blobUrl=base64ToBlobUrl(parts.join(''));
+    const blobUrl=partsToBlobUrl(parts);
     const probe=new Image();probe.src=blobUrl;await probe.decode();
     el.style.setProperty('background-image','linear-gradient(180deg,rgba(0,0,0,.015),rgba(0,0,0,.08)),url("'+blobUrl+'")','important');
     el.style.setProperty('background-size','cover','important');
