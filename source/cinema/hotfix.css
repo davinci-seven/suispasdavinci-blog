@@ -4,13 +4,13 @@ body .hero-art,body .beijing-art,body .montreal-art,body .workflow-art,body .ai-
   background-repeat:no-repeat!important;background-size:cover!important;overflow:hidden!important;isolation:isolate;box-shadow:0 30px 90px rgba(0,0,0,.24)!important;
   transform:none!important;will-change:auto!important;image-rendering:auto!important;
 }
-body .hero-art{background-image:linear-gradient(90deg,rgba(7,9,12,.08),rgba(7,9,12,.01) 55%),url('/cinema/img/hero-workspace.webp?v=9')!important;background-position:58% center!important;background-color:#0b0d0e!important}
-body .beijing-art{background-image:linear-gradient(180deg,rgba(20,18,16,.01),rgba(20,18,16,.05)),url('/cinema/img/beijing-departure.webp?v=9')!important;background-position:56% center!important;background-color:#aaa7a1!important}
-body .montreal-art{background-image:linear-gradient(180deg,rgba(10,20,30,.01),rgba(10,20,30,.05)),url('/cinema/img/montreal-arrival.webp?v=9')!important;background-position:56% center!important;background-color:#cbd9e3!important}
-body .workflow-art{background-image:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.06)),url('/cinema/img/workflow-automation.webp?v=9')!important;background-position:54% center!important;background-color:#0b0d0e!important}
-body .ai-art{background-image:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.06)),url('/cinema/img/ai-production.webp?v=9')!important;background-position:56% center!important;background-color:#0b0d0e!important}
-body .writing-art{background-image:linear-gradient(180deg,rgba(255,255,255,.01),rgba(30,20,10,.04)),url('/cinema/img/writing-public.webp?v=9')!important;background-position:63% center!important;background-color:#d8c6aa!important}
-body .final-art{background-image:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.07)),url('/cinema/img/final-montreal-v11.webp?v=9')!important;background-position:58% center!important;background-color:#0b0d0e!important}
+body .hero-art{background-image:linear-gradient(90deg,rgba(7,9,12,.08),rgba(7,9,12,.01) 55%),url('/cinema/img/hero-workspace.webp?v=12')!important;background-position:58% center!important;background-color:#0b0d0e!important}
+body .beijing-art{background-image:linear-gradient(180deg,rgba(20,18,16,.01),rgba(20,18,16,.05)),url('/cinema/img/beijing-departure.webp?v=12')!important;background-position:56% center!important;background-color:#aaa7a1!important}
+body .montreal-art{background-image:linear-gradient(180deg,rgba(10,20,30,.01),rgba(10,20,30,.05)),url('/cinema/img/montreal-arrival.webp?v=12')!important;background-position:56% center!important;background-color:#cbd9e3!important}
+body .workflow-art{background-image:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.06)),url('/cinema/img/workflow-automation.webp?v=12')!important;background-position:54% center!important;background-color:#0b0d0e!important}
+body .ai-art{background-image:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.06)),url('/cinema/img/ai-production.webp?v=12')!important;background-position:56% center!important;background-color:#0b0d0e!important}
+body .writing-art{background-image:linear-gradient(180deg,rgba(255,255,255,.01),rgba(30,20,10,.04)),url('/cinema/img/writing-public.webp?v=12')!important;background-position:63% center!important;background-color:#d8c6aa!important}
+body .final-art{background-image:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.07)),url('/cinema/img/final-montreal-v11.webp?v=12')!important;background-position:58% center!important;background-color:#0b0d0e!important}
 body .hero-art>:not(.caption),body .beijing-art>:not(.caption),body .montreal-art>:not(.caption),body .workflow-art>:not(.caption),body .ai-art>:not(.caption),body .writing-art>:not(.caption),body .final-art>:not(.caption){display:none!important}
 body .hero-art:after,body .beijing-art:after,body .montreal-art:after,body .workflow-art:after,body .ai-art:after,body .writing-art:after,body .final-art:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,transparent 80%,rgba(0,0,0,.08))!important}
 body .caption{display:block!important;z-index:4!important;background:rgba(8,10,12,.48)!important}
