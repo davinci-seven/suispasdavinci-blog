@@ -61,6 +61,26 @@ const counterObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>
   requestAnimationFrame(tick);
 })},{threshold:.55});
 document.querySelectorAll('[data-count]').forEach(el=>counterObserver.observe(el));
+
+async function loadArtwork(selector,prefix,count,gradient){
+  const el=document.querySelector(selector);
+  if(!el)return;
+  try{
+    const parts=await Promise.all(Array.from({length:count},async(_,i)=>{
+      const r=await fetch(`/cinema/img/${prefix}.webp.hq.b64.${i}?v=15`,{cache:'force-cache'});
+      if(!r.ok)throw new Error(`${r.status} ${r.statusText}`);
+      return (await r.text()).replace(/[^A-Za-z0-9+/=]/g,'');
+    }));
+    const b64=parts.join('');
+    if(!b64.startsWith('UklG'))throw new Error('invalid WebP payload');
+    el.style.setProperty('background-image',`${gradient},url("data:image/webp;base64,${b64}")`,'important');
+  }catch(err){
+    console.warn(`[cinema] ${selector} HQ artwork fallback in use:`,err.message);
+  }
+}
+loadArtwork('.writing-art','writing-public-v14',4,'linear-gradient(180deg,rgba(255,255,255,.01),rgba(30,20,10,.04))');
+loadArtwork('.final-art','final-montreal-v14',4,'linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.07))');
+
 addEventListener('resize',measure,{passive:true});
 addEventListener('load',measure,{once:true});
 measure();setTheme(0);requestAnimationFrame(frame);
