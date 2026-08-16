@@ -24,12 +24,26 @@ function rebuildJoined(name, chunkCount) {
   }
   const buf = Buffer.from(b64, 'base64');
   assertWebP(buf, name);
-  const out = path.join(imgDir, `${name}.webp`);
-  fs.writeFileSync(out, buf);
+  fs.writeFileSync(path.join(imgDir, `${name}.webp`), buf);
   console.log(`[cinema] rebuilt ${name}.webp (${buf.length} bytes)`);
 }
 
-// Legacy chunks were encoded independently. Decode each chunk, then concatenate bytes.
+// Some original assets were split as slices of one base64 string using .b64.N names.
+// They must be joined before decoding; decoding each slice independently corrupts the WebP.
+function rebuildLegacyJoined(name, chunkCount, outName = name) {
+  let b64 = '';
+  for (let i = 0; i < chunkCount; i++) {
+    const p = path.join(imgDir, `${name}.webp.b64.${i}`);
+    if (!fs.existsSync(p)) throw new Error(`Missing legacy cinema chunk: ${p}`);
+    b64 += cleanBase64(fs.readFileSync(p, 'utf8'));
+  }
+  const buf = Buffer.from(b64, 'base64');
+  assertWebP(buf, outName);
+  fs.writeFileSync(path.join(imgDir, `${outName}.webp`), buf);
+  console.log(`[cinema] rebuilt ${outName}.webp (${buf.length} bytes)`);
+}
+
+// A few assets were intentionally encoded per chunk; decode those chunks independently.
 function rebuildIndependent(name, chunkCount, outName = name) {
   const buffers = [];
   for (let i = 0; i < chunkCount; i++) {
@@ -39,8 +53,7 @@ function rebuildIndependent(name, chunkCount, outName = name) {
   }
   const buf = Buffer.concat(buffers);
   assertWebP(buf, outName);
-  const out = path.join(imgDir, `${outName}.webp`);
-  fs.writeFileSync(out, buf);
+  fs.writeFileSync(path.join(imgDir, `${outName}.webp`), buf);
   console.log(`[cinema] rebuilt ${outName}.webp (${buf.length} bytes)`);
 }
 
@@ -48,5 +61,7 @@ rebuildJoined('beijing-departure', 2);
 rebuildJoined('montreal-arrival', 3);
 rebuildJoined('workflow-automation', 2);
 rebuildIndependent('ai-production', 3);
-rebuildJoined('writing-public', 4);
-rebuildIndependent('final-montreal-v11', 2, 'final-montreal-v11');
+
+// 07/08: use the original intact base64 slices. The later repair chunks were malformed.
+rebuildLegacyJoined('writing-public', 2);
+// final-montreal.webp is already committed as a real binary asset, so no rebuild is needed for 08.
