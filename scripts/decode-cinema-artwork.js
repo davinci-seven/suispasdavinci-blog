@@ -14,7 +14,7 @@ function assertWebP(buf, name) {
   if (!ok) throw new Error(`Invalid WebP rebuilt for ${name} (${buf.length} bytes)`);
 }
 
-function rebuildJoined(name, chunkCount) {
+function rebuildJoined(name, chunkCount, outName = name) {
   let b64 = '';
   for (let i = 0; i < chunkCount; i++) {
     const p = path.join(imgDir, `${name}.webp.fix.b64.${i}`);
@@ -22,9 +22,9 @@ function rebuildJoined(name, chunkCount) {
     b64 += cleanBase64(fs.readFileSync(p, 'utf8'));
   }
   const buf = Buffer.from(b64, 'base64');
-  assertWebP(buf, name);
-  fs.writeFileSync(path.join(imgDir, `${name}.webp`), buf);
-  console.log(`[cinema] rebuilt ${name}.webp (${buf.length} bytes)`);
+  assertWebP(buf, outName);
+  fs.writeFileSync(path.join(imgDir, `${outName}.webp`), buf);
+  console.log(`[cinema] rebuilt ${outName}.webp (${buf.length} bytes)`);
 }
 
 function rebuildIndependent(name, chunkCount, outName = name) {
@@ -40,27 +40,9 @@ function rebuildIndependent(name, chunkCount, outName = name) {
   console.log(`[cinema] rebuilt ${outName}.webp (${buf.length} bytes)`);
 }
 
-// HQ v14 files are four text slices of one base64 string. Join first, decode once.
-function rebuildHQJoined(name, chunkCount, outName = name) {
-  let b64 = '';
-  for (let i = 0; i < chunkCount; i++) {
-    const p = path.join(imgDir, `${name}.webp.hq.b64.${i}`);
-    if (!fs.existsSync(p)) throw new Error(`Missing HQ cinema chunk: ${p}`);
-    b64 += cleanBase64(fs.readFileSync(p, 'utf8'));
-  }
-  const buf = Buffer.from(b64, 'base64');
-  assertWebP(buf, outName);
-  fs.writeFileSync(path.join(imgDir, `${outName}.webp`), buf);
-  console.log(`[cinema] rebuilt ${outName}.webp (${buf.length} bytes)`);
-}
-
 rebuildJoined('beijing-departure', 2);
 rebuildJoined('montreal-arrival', 3);
 rebuildJoined('workflow-automation', 2);
 rebuildIndependent('ai-production', 3);
-
-// 07/08: write both new versioned names and legacy names so even a cached v13 stylesheet gets the repaired images.
-rebuildHQJoined('writing-public-v14', 4, 'writing-public-v14');
-rebuildHQJoined('writing-public-v14', 4, 'writing-public');
-rebuildHQJoined('final-montreal-v14', 4, 'final-montreal-v14');
-rebuildHQJoined('final-montreal-v14', 4, 'final-montreal');
+rebuildJoined('writing-public', 4);
+rebuildIndependent('final-montreal-v11', 2, 'final-montreal');
