@@ -58,5 +58,9 @@ rebuildJoined('beijing-departure', 2);
 rebuildJoined('montreal-arrival', 3);
 rebuildJoined('workflow-automation', 2);
 rebuildIndependent('ai-production', 3);
-rebuildHQJoined('writing-public-v14', 4);
-rebuildHQJoined('final-montreal-v14', 4);
+
+// 07/08: write both new versioned names and legacy names so even a cached v13 stylesheet gets the repaired images.
+rebuildHQJoined('writing-public-v14', 4, 'writing-public-v14');
+rebuildHQJoined('writing-public-v14', 4, 'writing-public');
+rebuildHQJoined('final-montreal-v14', 4, 'final-montreal-v14');
+rebuildHQJoined('final-montreal-v14', 4, 'final-montreal');
