@@ -27,6 +27,19 @@ function rebuildJoined(name, chunkCount, outName = name) {
   console.log(`[cinema] rebuilt ${outName}.webp (${buf.length} bytes)`);
 }
 
+function rebuildJoinedLegacy(name, chunkCount, outName = name) {
+  let b64 = '';
+  for (let i = 0; i < chunkCount; i++) {
+    const p = path.join(imgDir, `${name}.webp.b64.${i}`);
+    if (!fs.existsSync(p)) throw new Error(`Missing cinematic chunk: ${p}`);
+    b64 += cleanBase64(fs.readFileSync(p, 'utf8'));
+  }
+  const buf = Buffer.from(b64, 'base64');
+  assertWebP(buf, outName);
+  fs.writeFileSync(path.join(imgDir, `${outName}.webp`), buf);
+  console.log(`[cinema] rebuilt ${outName}.webp (${buf.length} bytes)`);
+}
+
 function rebuildIndependent(name, chunkCount, outName = name) {
   const buffers = [];
   for (let i = 0; i < chunkCount; i++) {
@@ -45,4 +58,5 @@ rebuildJoined('montreal-arrival', 3);
 rebuildJoined('workflow-automation', 2);
 rebuildIndependent('ai-production', 3);
 rebuildJoined('writing-public', 4);
-rebuildIndependent('final-montreal-v11', 2, 'final-montreal');
+// These two files are slices of one base64 stream, not independently encoded chunks.
+rebuildJoinedLegacy('final-montreal-v11', 2, 'final-montreal');
