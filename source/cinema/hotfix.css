@@ -1,20 +1,27 @@
-/* Cinematic artwork layer — browser only loads normal WebP files. */
+/* Cinematic artwork layer — keep browser artwork sharp on desktop. */
 body .brand-mark{display:none!important}
 body .hero-art,body .beijing-art,body .montreal-art,body .workflow-art,body .ai-art,body .writing-art,body .final-art{
   background-repeat:no-repeat!important;background-size:cover!important;overflow:hidden!important;isolation:isolate;box-shadow:0 30px 90px rgba(0,0,0,.24)!important;
   transform:none!important;will-change:auto!important;image-rendering:auto!important;
 }
-body .hero-art{background-image:linear-gradient(90deg,rgba(7,9,12,.08),rgba(7,9,12,.01) 55%),url('/cinema/img/hero-workspace.webp?v=16')!important;background-position:58% center!important;background-color:#0b0d0e!important}
-body .beijing-art{background-image:linear-gradient(180deg,rgba(20,18,16,.01),rgba(20,18,16,.05)),url('/cinema/img/beijing-departure.webp?v=16')!important;background-position:56% center!important;background-color:#aaa7a1!important}
-body .montreal-art{background-image:linear-gradient(180deg,rgba(10,20,30,.01),rgba(10,20,30,.05)),url('/cinema/img/montreal-arrival.webp?v=16')!important;background-position:56% center!important;background-color:#cbd9e3!important}
-body .workflow-art{background-image:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.06)),url('/cinema/img/workflow-automation.webp?v=16')!important;background-position:54% center!important;background-color:#0b0d0e!important}
-body .ai-art{background-image:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.06)),url('/cinema/img/ai-production.webp?v=16')!important;background-position:56% center!important;background-color:#0b0d0e!important}
-/* 07/08 use real WebP files. The extra hero layer is a visual fail-safe: even a broken rebuilt asset can never leave a blank panel. */
-body .writing-art{background-image:linear-gradient(180deg,rgba(255,255,255,.01),rgba(30,20,10,.04)),url('/cinema/img/writing-public.webp?v=16'),url('/cinema/img/hero-workspace.webp?v=16')!important;background-position:center,63% center,63% center!important;background-color:#d8c6aa!important}
-body .final-art{background-image:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.07)),url('/cinema/img/final-montreal.webp?v=16'),url('/cinema/img/hero-workspace.webp?v=16')!important;background-position:center,58% center,58% center!important;background-color:#0b0d0e!important}
+body .hero-art{background-image:linear-gradient(90deg,rgba(7,9,12,.08),rgba(7,9,12,.01) 55%),url('/cinema/img/hero-workspace-hd.webp?v=17')!important;background-position:58% center!important;background-color:#0b0d0e!important}
+body .beijing-art{background-image:linear-gradient(180deg,rgba(20,18,16,.01),rgba(20,18,16,.05)),url('/cinema/img/beijing-departure.webp?v=17')!important;background-position:56% center!important;background-color:#aaa7a1!important}
+body .montreal-art{background-image:linear-gradient(180deg,rgba(10,20,30,.01),rgba(10,20,30,.05)),url('/cinema/img/montreal-arrival.webp?v=17')!important;background-position:56% center!important;background-color:#cbd9e3!important}
+body .workflow-art{background-image:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.06)),url('/cinema/img/workflow-automation.webp?v=17')!important;background-position:54% center!important;background-color:#0b0d0e!important}
+body .ai-art{background-image:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.06)),url('/cinema/img/ai-production.webp?v=17')!important;background-position:56% center!important;background-color:#0b0d0e!important}
+body .writing-art{background-image:linear-gradient(180deg,rgba(255,255,255,.01),rgba(30,20,10,.04)),url('/cinema/img/writing-public.webp?v=17'),url('/cinema/img/hero-workspace-hd.webp?v=17')!important;background-position:center,63% center,63% center!important;background-color:#d8c6aa!important}
+body .final-art{background-image:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.07)),url('/cinema/img/final-montreal.webp?v=17'),url('/cinema/img/hero-workspace-hd.webp?v=17')!important;background-position:center,58% center,58% center!important;background-color:#0b0d0e!important}
 body .hero-art>:not(.caption),body .beijing-art>:not(.caption),body .montreal-art>:not(.caption),body .workflow-art>:not(.caption),body .ai-art>:not(.caption),body .writing-art>:not(.caption),body .final-art>:not(.caption){display:none!important}
 body .hero-art:after,body .beijing-art:after,body .montreal-art:after,body .workflow-art:after,body .ai-art:after,body .writing-art:after,body .final-art:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,transparent 80%,rgba(0,0,0,.08))!important}
 body .caption{display:block!important;z-index:4!important;background:rgba(8,10,12,.48)!important}
+
+/* Desktop used to force 16:9 artwork into a ~square 630px-high box. That made 720x405 sources upscale ~1.5x and look soft.
+   Keep the cinematic panels close to their native aspect ratio so existing art renders at ~1:1 pixel density. */
+@media(min-width:1051px){
+  body .hero-art,body .beijing-art,body .montreal-art,body .workflow-art,body .ai-art,body .writing-art,body .final-art{
+    width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:16/10!important;
+  }
+}
 @media(max-width:1050px){body .hero-art{background-position:60% center!important}body .beijing-art,body .montreal-art{background-position:62% center!important}}
 @media(max-width:620px){
   body .topbar{height:64px!important;background:var(--top-bg,rgba(9,10,11,.92))!important;border-bottom:1px solid rgba(128,128,128,.18)!important;-webkit-backdrop-filter:blur(16px) saturate(1.12);backdrop-filter:blur(16px) saturate(1.12)}
