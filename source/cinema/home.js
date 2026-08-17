@@ -27,12 +27,13 @@ function frame(){
   smoothY+=(targetY-smoothY)*(reduced?1:.14);
   let nearest=0,dist=Infinity;
   metrics.forEach((m,i)=>{
-    const p=clamp((smoothY-m.top)/m.range),ch=chapters[i],enter=clamp(p*4);
+    const p=clamp((smoothY-m.top)/m.range),ch=chapters[i];
+    const enter=i===0?1:clamp(p*4);
     ch.style.setProperty('--p',p.toFixed(4));
-    ch.style.setProperty('--copy-y',((.5-p)*42).toFixed(2)+'px');
-    ch.style.setProperty('--copy-o',(.18+enter*.82).toFixed(3));
-    ch.style.setProperty('--art-y',((.5-p)*22).toFixed(2)+'px');
-    ch.style.setProperty('--reveal',((1-enter)*12).toFixed(2)+'%');
+    ch.style.setProperty('--copy-y',i===0?'0px':((.5-p)*42).toFixed(2)+'px');
+    ch.style.setProperty('--copy-o',i===0?'1':(.18+enter*.82).toFixed(3));
+    ch.style.setProperty('--art-y',i===0?'0px':((.5-p)*22).toFixed(2)+'px');
+    ch.style.setProperty('--reveal',i===0?'0%':((1-enter)*12).toFixed(2)+'%');
     ch.style.setProperty('--art-scale',(1.08-clamp(p)*.045).toFixed(4));
     ch.style.setProperty('--img-x',((.5-p)*2.6).toFixed(3)+'%');
     ch.style.setProperty('--img-y',((.5-p)*1.8).toFixed(3)+'%');
