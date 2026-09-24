@@ -8,12 +8,12 @@ type: page
 <section class="about-pro">
   <div class="about-hero">
     <div>
-      <p class="eyebrow">达芬七｜Seven · Stanley Team</p>
-      <h1>加拿大十年，把海外生活、润学和 AI 工具拆成能用的判断。</h1>
-      <p>这里不是移民中介页面，也不是资源搬运站。我写真实海外生活、出海工具、语言学习和人生重启相关的文章，也把一些复杂问题做成小工具。</p>
+      <p class="eyebrow">达芬七｜Seven · MONTRÉAL</p>
+      <h1>一个普通人，怎么把自己的能力边界一点点往外推。</h1>
+      <p>北京出发，在加拿大重新开始。非科班技术人，后来一路折腾代码、自动化、AI、内容和互联网产品。这里保留一份相对完整的个人履历——但不是简历，也不会把所有底牌摊开。</p>
       <div class="about-actions">
         <a class="btn primary" href="https://x.com/intent/follow?screen_name=davinci_seven" target="_blank" rel="noopener noreferrer">关注达芬七｜Seven</a>
-        <a class="btn" href="https://x.com/Stanleysobest" target="_blank" rel="noopener noreferrer">查看 Stanley Team</a>
+        <a class="btn" href="https://github.com/davinci-seven" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>
 
@@ -21,64 +21,53 @@ type: page
       <img src="/img/x-avatar.jpg" alt="达芬七｜Seven头像" />
       <h2>达芬七｜Seven</h2>
       <p>@davinci_seven</p>
-      <strong>加拿大十年。Stanley Team 成员。</strong>
-      <span>写移民幻觉、海外生活、出海工具和普通人的重启决策。</span>
+      <strong>普通技术人出身。现在更喜欢做东西，而不是解释自己是什么职位。</strong>
+      <span>AI · Automation · Internet Products · Writing</span>
     </aside>
-  </div>
-
-  <div class="x-card-grid">
-    <a class="x-profile-card" href="https://x.com/davinci_seven" target="_blank" rel="noopener noreferrer">
-      <div>
-        <img src="/img/x-avatar.jpg" alt="达芬七｜Seven X 头像" />
-        <span>个人主页</span>
-      </div>
-      <h2>达芬七｜Seven</h2>
-      <p>加拿大十年老炮｜普通人逆袭千万之路｜把润学做成工具</p>
-      <strong>个人 X 主页</strong>
-      <em>点开查看最新动态</em>
-    </a>
-
-    <a class="x-profile-card team" href="https://x.com/Stanleysobest" target="_blank" rel="noopener noreferrer">
-      <div>
-        <span>团队主页</span>
-      </div>
-      <h2>Stanley Team</h2>
-      <p>全球顶尖的去中心化 AI 研究与应用团队，连接技术、学术、产业与内容影响力。</p>
-      <strong>Stanley Team 主页</strong>
-      <em>点开查看最新动态</em>
-    </a>
   </div>
 
   <section class="about-section">
     <div class="section-title">
-      <p>我在做什么</p>
-      <h2>把判断做成工具，把经验写成文章。</h2>
+      <p>THE SHORT VERSION</p>
+      <h2>起点普通，后来越来越不按路线来。</h2>
     </div>
     <div class="about-grid">
-      <a href="/tools/run-worth/">
-        <span>人生计算器 001</span>
-        <strong>润值计算器</strong>
-        <p>测测你适不适合人生重启，钱、时间、环境、关系和未来哪笔账最拖后腿。</p>
-      </a>
-      <a href="/blog/">
-        <span>长文库</span>
-        <strong>文章与观察</strong>
-        <p>加拿大生活、移民幻觉、英语学习、AI 工具和出海支付，一篇篇沉淀下来。</p>
-      </a>
-      <a href="/2026/05/12/2026-05-12-virtual-card-chatgpt-claude-guide/">
-        <span>出海工具</span>
-        <strong>VCard 虚拟卡测评</strong>
-        <p>ChatGPT、Claude、海外 SaaS 订阅和企业支付，先把风险边界讲清楚。</p>
-      </a>
+      <div><span>2014 →</span><strong>换一张人生地图</strong><p>从北京出发，在加拿大从头搭生活。语言、身份、工作、家庭，一件件重新装回来。</p></div>
+      <div><span>WORK → CODE</span><strong>从“别重复干活”开始</strong><p>职业起点没什么传奇。只是越来越习惯把麻烦事变成脚本、工具和流程，最后技术成了真正能解决问题的手段。</p></div>
+      <div><span>AI → NOW</span><strong>不满足于聊天框</strong><p>本地模型、Agent、自动化、内容系统、互联网产品。比起追热点，我更关心它们最后能不能真的干活。</p></div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="section-title">
+      <p>SELECTED PROOF</p>
+      <h2>履历可以模糊，结果不用。</h2>
+    </div>
+    <div class="about-grid">
+      <div><span>100+</span><strong>程序与自动化工具</strong><p>从解决自己的重复劳动，到做成别人真正能用的东西。</p></div>
+      <div><span>17万+</span><strong>自动化项目累计变现</strong><p>不是融资故事，是历史项目、真实需求、交付与回款留下来的数字。</p></div>
+      <div><span>1亿+</span><strong>内容与项目累计曝光</strong><p>我喜欢做东西，也花了很多年学习怎么把复杂的东西讲到别人愿意看。</p></div>
     </div>
   </section>
 
   <section class="about-section team-intro">
     <div>
-      <p class="eyebrow">Stanley Team</p>
-      <h2>全球顶尖的去中心化 AI 研究与应用团队。</h2>
-      <p>Stanley Team 连接技术、学术、产业与内容影响力，把前沿 AI 能力转化为企业真正可用的解决方案。我在这个站里做的工具和文章，也会继续沿着这个方向走：把抽象判断拆成可测试、可使用、可传播的产品。</p>
-      <a href="https://x.com/Stanleysobest" target="_blank" rel="noopener noreferrer">前往 Stanley Team X 主页</a>
+      <p class="eyebrow">THE ICEBERG</p>
+      <h2>网上能看到的，只是我愿意公开的那部分。</h2>
+      <p>有些东西会开源，有些会写成长文，有些只能展示局部结果。剩下的，让它们安静地跑就好。这里不会是一份“全部项目清单”，而是一张经过挑选的公开切片。</p>
+      <a href="/#now">看一些能公开的东西</a>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="section-title">
+      <p>WRITING</p>
+      <h2>我折腾什么，就写什么。</h2>
+    </div>
+    <div class="about-grid">
+      <a href="/blog/"><span>长文库</span><strong>文章与观察</strong><p>AI、互联网、加拿大、搞钱、踩坑，以及一个普通人不断重启自己的过程。</p></a>
+      <a href="https://github.com/davinci-seven" target="_blank" rel="noopener noreferrer"><span>公开代码</span><strong>GitHub</strong><p>能开源的工具和实验放这里。没有“大神”人设，只有跑得起来的东西。</p></a>
+      <a href="https://info.vcardvirtual.cc/" target="_blank" rel="noopener noreferrer"><span>互联网实验</span><strong>VCard</strong><p>海外订阅与支付相关的真实项目。它是我做过的事情之一，不是我的全部身份。</p></a>
     </div>
   </section>
 </section>
