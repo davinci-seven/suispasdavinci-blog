@@ -191,3 +191,39 @@ body .writing-art:before{z-index:2!important}
   body .ai-art>.art-image{object-position:68% center}
   body .writing-art>.art-image{object-position:64% center}
 }
+
+
+/* Native artwork pass — no fragile binary dependency for lab/writing/final/story system scenes. */
+body .ai-art{background-image:none!important;background:radial-gradient(circle at 72% 18%,#2b213c,#0b0d0e 58%)!important}
+body .writing-art{background-image:none!important;background:linear-gradient(135deg,#d6c2a3,#efe4d1)!important}
+body .final-art{background-image:none!important;background:#070a0e!important}
+body .montreal-art{background-image:none!important;background:linear-gradient(180deg,#cbd9e3,#edf1f2)!important}
+body .workflow-art{background-image:none!important;background:#101712!important}
+
+body .ai-art>.ai-window,
+body .writing-art>.paper,
+body .writing-art>.pen,
+body .final-art>.night-sky,
+body .final-art>.city-night,
+body .final-art>.river,
+body .final-art>.seven-silhouette,
+body .final-art>.final-note,
+body .montreal-art>.winter-sky,
+body .montreal-art>.snowfield,
+body .montreal-art>.mtl-buildings,
+body .montreal-art>.bus,
+body .montreal-art>.traveler,
+body .montreal-art>.map-card,
+body .workflow-art>.sheet,
+body .workflow-art>.terminal,
+body .workflow-art>.sticky{display:block!important}
+
+body .ai-art>.ai-window{z-index:2}
+body .writing-art>.paper,body .writing-art>.pen{z-index:2}
+body .final-art>.night-sky,body .final-art>.city-night,body .final-art>.river{z-index:0}
+body .final-art>.seven-silhouette,body .final-art>.final-note{z-index:2}
+body .montreal-art>.winter-sky,body .montreal-art>.snowfield,body .montreal-art>.mtl-buildings{z-index:0}
+body .montreal-art>.bus,body .montreal-art>.traveler,body .montreal-art>.map-card{z-index:2}
+body .workflow-art>.sheet,body .workflow-art>.terminal,body .workflow-art>.sticky{z-index:2}
+body .writing-art:before{z-index:1!important;background:radial-gradient(circle at 76% 18%,rgba(207,73,55,.14),transparent 40%),linear-gradient(180deg,rgba(255,255,255,.08),rgba(72,48,28,.08))!important}
+body .ai-art:after,body .writing-art:after,body .final-art:after,body .montreal-art:after,body .workflow-art:after{z-index:1!important}
