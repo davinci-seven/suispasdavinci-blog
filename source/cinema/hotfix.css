@@ -152,3 +152,42 @@ body .story-tease .beijing-art{
   body .ai-art{background-position:center,68% center!important}
   body .writing-art{background-position:center,64% center!important}
 }
+
+
+/* 2026-09-24 QA hardening: explicit image elements + product-like Seven mark. */
+body .brand{align-items:center;gap:10px}
+body .brand-mark{
+  display:block!important;
+  width:30px!important;
+  height:30px!important;
+  flex:0 0 30px;
+  border-radius:9px;
+  box-shadow:0 8px 22px rgba(0,0,0,.18);
+}
+body .art{position:relative}
+body .art>.art-image{
+  display:block!important;
+  position:absolute;
+  inset:0;
+  z-index:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  border-radius:inherit;
+}
+body .hero-art>.art-image{object-position:58% center}
+body .ai-art>.art-image{object-position:60% center;filter:saturate(.92) contrast(1.03) brightness(.86)}
+body .writing-art>.art-image{object-position:58% center;filter:saturate(.72) sepia(.08) contrast(.92) brightness(1.03)}
+body .beijing-art>.art-image{object-position:56% center}
+body .montreal-art>.art-image{object-position:56% center}
+body .final-art>.art-image{object-position:58% center}
+body .art:after{z-index:1!important}
+body .art .caption{z-index:4!important}
+body .writing-art:before{z-index:2!important}
+@media(max-width:620px){
+  body .brand-mark{width:28px!important;height:28px!important;flex-basis:28px}
+  body .hero-art>.art-image{object-position:66% center}
+  body .ai-art>.art-image{object-position:68% center}
+  body .writing-art>.art-image{object-position:64% center}
+}
