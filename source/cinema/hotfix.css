@@ -226,3 +226,47 @@ body .montreal-art>.bus,body .montreal-art>.traveler,body .montreal-art>.map-car
 body .workflow-art>.sheet,body .workflow-art>.terminal,body .workflow-art>.sticky{z-index:2}
 body .writing-art:before{z-index:1!important;background:radial-gradient(circle at 76% 18%,rgba(207,73,55,.14),transparent 40%),linear-gradient(180deg,rgba(255,255,255,.08),rgba(72,48,28,.08))!important}
 body .ai-art:after,body .writing-art:after,body .final-art:after,body .montreal-art:after,body .workflow-art:after{z-index:1!important}
+
+
+/* Premium photographic panels — real assets first, CSS scenery only as fallback. */
+body .premium-art{background:#0b0d0e!important}
+body .premium-art>.art-image{
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  border-radius:inherit!important;
+  z-index:0!important;
+  transform:none!important;
+}
+body .ai-art.premium-art>.art-image{
+  object-position:50% 52%!important;
+  filter:saturate(.96) contrast(1.03) brightness(.94)!important;
+}
+body .writing-art.premium-art{
+  background:#d5c2a4!important;
+  box-shadow:0 30px 80px rgba(76,50,27,.22)!important;
+}
+body .writing-art.premium-art>.art-image{
+  object-position:50% 55%!important;
+  filter:saturate(.92) contrast(1.02) brightness(1.00)!important;
+}
+body .writing-art.premium-art:before{
+  background:linear-gradient(180deg,rgba(255,247,232,.02),rgba(46,28,12,.08))!important;
+  z-index:1!important;
+}
+body .premium-final>.art-image{
+  object-position:84% 50%!important;
+  transform:scale(1.14)!important;
+  filter:saturate(.86) contrast(1.08) brightness(.72)!important;
+}
+body .premium-final:after{
+  background:linear-gradient(90deg,rgba(7,10,14,.08),rgba(7,10,14,.22)),linear-gradient(180deg,transparent 58%,rgba(3,5,8,.34))!important;
+}
+@media(max-width:620px){
+  body .ai-art.premium-art>.art-image{object-position:48% 50%!important}
+  body .writing-art.premium-art>.art-image{object-position:55% 54%!important}
+  body .premium-final>.art-image{object-position:78% 50%!important;transform:scale(1.08)!important}
+}
