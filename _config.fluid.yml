@@ -1014,13 +1014,13 @@ about:
   banner_img_height: 42
   banner_mask_alpha: 0.72
   avatar: /img/avatar.png
-  name: "出海工具与加拿大生活指南"
-  intro: "海外服务订阅 | 虚拟卡支付 | 加拿大生活 | 移民实操"
+  name: "达芬七｜Seven"
+  intro: "AI | Automation | Internet Products | Writing"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, the icon is no longer a link, but a hovering QR code
   icons:
     - { class: "iconfont icon-twitter-fill", link: "https://x.com/davinci_seven", tip: "X" }
-    - { class: "iconfont icon-github-fill", link: "https://github.com/knightdf", tip: "GitHub" }
+    - { class: "iconfont icon-github-fill", link: "https://github.com/davinci-seven", tip: "GitHub" }
 
 
 #---------------------------
