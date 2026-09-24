@@ -10,7 +10,7 @@ type: page
     <div>
       <p class="eyebrow">达芬七｜Seven · MONTRÉAL</p>
       <h1>一个普通人，怎么把自己的能力边界一点点往外推。</h1>
-      <p>北京出发，在加拿大重新开始。非科班技术人，后来一路折腾代码、自动化、AI、内容和互联网产品。这里保留一份相对完整的个人履历——但不是简历，也不会把所有底牌摊开。</p>
+      <p>北京出发，在加拿大重新开始。非科班技术人，后来一路折腾代码、自动化、AI、内容和互联网产品。这里保留一份相对完整的个人履历——但不是简历，更像一张我怎么一路走到这里的路线图。</p>
       <div class="about-actions">
         <a class="btn primary" href="https://x.com/intent/follow?screen_name=davinci_seven" target="_blank" rel="noopener noreferrer">关注达芬七｜Seven</a>
         <a class="btn" href="https://github.com/davinci-seven" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -52,10 +52,10 @@ type: page
 
   <section class="about-section team-intro">
     <div>
-      <p class="eyebrow">THE ICEBERG</p>
-      <h2>网上能看到的，只是我愿意公开的那部分。</h2>
-      <p>有些东西会开源，有些会写成长文，有些只能展示局部结果。剩下的，让它们安静地跑就好。这里不会是一份“全部项目清单”，而是一张经过挑选的公开切片。</p>
-      <a href="/#now">看一些能公开的东西</a>
+      <p class="eyebrow">HOW I WORK</p>
+      <h2>先做出来，再把值得讲的讲清楚。</h2>
+      <p>我更喜欢先把东西跑起来：工具、AI、自动化、内容系统、互联网产品。真正值得留下来的，再慢慢写成文章、代码和公开项目。</p>
+      <a href="/#work">看最近在做什么</a>
     </div>
   </section>
 
