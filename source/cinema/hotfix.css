@@ -76,3 +76,41 @@ body .caption{display:block!important;z-index:4!important;background:rgba(8,10,1
   body .writing-art{background-position:center,63% center!important}
   body .final-art{background-position:center,58% center!important}
 }
+
+
+/* Iceberg brand refresh — homepage hierarchy */
+.brand-hero .copy h1{font-family:Arial,Helvetica,sans-serif;font-weight:950;letter-spacing:-.075em;line-height:.82;font-size:clamp(74px,8.8vw,138px);text-transform:uppercase}
+.brand-hero .copy h1 em{font-family:"STSong","Songti SC",serif;font-weight:600;letter-spacing:-.055em}
+.brand-hero .hero-cn{margin:24px 0 0;font-family:"STSong","Songti SC",serif;font-size:clamp(25px,2.4vw,38px);line-height:1.25;color:#f2ece2}
+.brand-hero .lead{margin-top:20px;font:800 11px/1.7 ui-monospace,Consolas,monospace;letter-spacing:.12em;color:#aaa49b}
+.brand-hero .iceberg-line{margin:22px 0 0;padding-left:16px;border-left:2px solid var(--red);font-size:15px;line-height:1.8;color:#d8d1c7}
+.brand-hero .btn.ghost,.final .btn.ghost{opacity:.68}
+.brand-hero .hero-art:before{content:"SELECTED\A PUBLIC\A WORK";white-space:pre;position:absolute;z-index:3;right:24px;top:24px;color:rgba(255,255,255,.76);font:900 clamp(20px,2.8vw,40px)/.92 Arial,sans-serif;letter-spacing:-.04em;text-align:right}
+.work-first{--scene-bg:#101214;--scene-ink:#f3ede3;--accent:#e55a3d}
+.work-first .work-scene{grid-template-columns:minmax(360px,.68fr) minmax(620px,1.32fr)}
+.work-first .work-grid{max-width:none;margin-top:0}
+.work-first .now-card{min-height:190px;padding:22px 22px;display:flex;flex-direction:column}
+.work-first .now-card.featured{grid-row:span 2;min-height:390px;background:linear-gradient(145deg,rgba(229,90,61,.12),rgba(255,255,255,.025));border-color:rgba(229,90,61,.5)}
+.work-first .now-card b{font-family:"STSong","Songti SC",serif;font-size:clamp(19px,1.7vw,28px);line-height:1.15}
+.work-first .now-card em{font-size:11px;line-height:1.75}
+.work-first .now-card strong{margin-top:auto;padding-top:20px;color:#d9d2c8;font:800 8px/1 ui-monospace,Consolas,monospace;letter-spacing:.12em}
+.work-first .now-card.mystery{background:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 12px,rgba(255,255,255,.01) 12px 24px)}
+.ai .quote em{color:#b798e9}
+.story-tease{--scene-bg:#d7d0c3;--scene-ink:#191817;--accent:#a84436}
+.story-tease .btn{color:#fff}
+@media(max-width:1050px){
+ .brand-hero .copy h1{font-size:clamp(68px,15vw,110px)}
+ .brand-hero .hero-art{order:initial}
+ .work-first .work-scene{grid-template-columns:1fr}
+ .work-first .now-grid{grid-template-columns:1fr 1fr}
+ .work-first .now-card.featured{grid-row:auto;min-height:210px}
+}
+@media(max-width:620px){
+ .brand-hero .copy h1{font-size:clamp(62px,19vw,88px)}
+ .brand-hero .hero-cn{font-size:25px}
+ .brand-hero .iceberg-line{font-size:14px}
+ .brand-hero .actions{gap:8px}
+ .brand-hero .btn{min-height:43px;padding:0 12px;font-size:10px}
+ .work-first .now-grid{grid-template-columns:1fr}
+ .work-first .now-card,.work-first .now-card.featured{min-height:175px}
+}
