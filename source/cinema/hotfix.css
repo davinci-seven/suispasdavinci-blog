@@ -114,3 +114,41 @@ body .caption{display:block!important;z-index:4!important;background:rgba(8,10,1
  .work-first .now-grid{grid-template-columns:1fr}
  .work-first .now-card,.work-first .now-card.featured{min-height:175px}
 }
+
+
+/* Artwork fallback pass — use committed image assets so sections never render as empty panels. */
+body .ai-art{
+  background-image:
+    linear-gradient(90deg,rgba(8,10,12,.18),rgba(8,10,12,.02) 58%),
+    url('/cinema/img/hero-workspace-hd.webp?v=brand1')!important;
+  background-position:center,62% center!important;
+  background-color:#0b0d0e!important;
+}
+body .writing-art{
+  background-image:
+    linear-gradient(90deg,rgba(232,221,202,.08),rgba(232,221,202,.02) 46%,rgba(20,16,12,.08)),
+    url('/cinema/img/final-montreal.webp?v=brand1')!important;
+  background-position:center,58% center!important;
+  background-color:#cdbb9e!important;
+  box-shadow:0 28px 72px rgba(72,48,28,.22)!important;
+}
+body .writing-art:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(255,244,224,.02),rgba(20,12,8,.16)),
+    radial-gradient(circle at 78% 22%,rgba(207,73,55,.12),transparent 38%);
+}
+body .writing-art .caption{z-index:4!important}
+body .story-tease .beijing-art{
+  background-image:
+    linear-gradient(180deg,rgba(20,18,16,.02),rgba(20,18,16,.09)),
+    url('/cinema/img/beijing-departure.webp?v=brand1')!important;
+}
+@media(max-width:620px){
+  body .ai-art{background-position:center,68% center!important}
+  body .writing-art{background-position:center,64% center!important}
+}
