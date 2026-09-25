@@ -26,6 +26,17 @@ type: page
     </aside>
   </div>
 
+  <section class="about-section name-story">
+    <div class="section-title">
+      <p>WHY THE NAME</p>
+      <h2>我不是达芬奇，我是达芬七。</h2>
+    </div>
+    <div class="team-intro">
+      <p><strong>Suis pas Da Vinci</strong> 是一句很口语的法语，差不多就是“我不是达芬奇”。名字其实没那么玄：我爱喝七喜，画画不太会，但很早就喜欢拿AI画图、折腾各种工具。于是 Da Vinci 往后挪了一位，成了“达芬七”。</p>
+      <p>现在这个名字倒也越来越像我：不装大师，不端专家人设。看到什么有意思的东西，就想自己做一个试试。</p>
+    </div>
+  </section>
+
   <section class="about-section">
     <div class="section-title">
       <p>THE SHORT VERSION</p>
