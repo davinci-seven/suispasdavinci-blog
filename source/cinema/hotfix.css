@@ -347,3 +347,7 @@ body .writing .copy h2 em{white-space:nowrap!important}
   body .writing .copy h2 em{white-space:normal!important}
   body .writing-art>.art-image{object-position:62% center!important}
 }
+
+
+/* Brand polish: keep the hero image clean; the project context already lives in the caption. */
+body .brand-hero .hero-art:before{content:none!important;display:none!important}
