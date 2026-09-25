@@ -21,6 +21,7 @@ i18n_dir: ':lang'
 skip_render:
   - index.html
   - story/**
+  - lab/**
   - cinema/**
   - games/survived-another-month/**
   - google*.html
