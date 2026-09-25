@@ -293,3 +293,57 @@ body .writing .copy h2 em{white-space:nowrap}
   body .writing .copy h2{font-size:44px!important}
   body .writing .copy h2 em{white-space:normal}
 }
+
+
+/* 2026-09-24 final verified-artwork map: only byte-complete WebP files. */
+body .hero-art,
+body .ai-art,
+body .writing-art,
+body .beijing-art,
+body .montreal-art,
+body .workflow-art,
+body .final-art{
+  background-image:none!important;
+}
+body .hero-art>.art-image,
+body .ai-art>.art-image,
+body .writing-art>.art-image,
+body .beijing-art>.art-image,
+body .montreal-art>.art-image,
+body .workflow-art>.art-image,
+body .final-art>.art-image{
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  transform:none!important;
+  filter:none!important;
+}
+body .hero-art>.art-image{object-position:58% center!important}
+body .ai-art>.art-image{object-position:50% center!important}
+body .writing-art>.art-image{
+  object-position:58% center!important;
+  filter:sepia(.24) saturate(.78) brightness(1.12) contrast(.88)!important;
+}
+body .beijing-art>.art-image{object-position:center!important}
+body .montreal-art>.art-image{object-position:center!important}
+body .workflow-art>.art-image{object-position:center!important}
+body .final-art>.art-image{
+  object-position:center!important;
+  filter:saturate(.82) brightness(.72) contrast(1.08)!important;
+}
+body .writing-art:before{
+  background:linear-gradient(90deg,rgba(243,229,204,.16),rgba(243,229,204,.02) 58%),linear-gradient(180deg,rgba(255,255,255,.02),rgba(74,48,26,.12))!important;
+}
+body .final-art:after{
+  background:linear-gradient(90deg,rgba(7,10,14,.04),rgba(7,10,14,.14)),linear-gradient(180deg,transparent 58%,rgba(3,5,8,.28))!important;
+}
+body .writing .copy h2{font-size:clamp(45px,4.25vw,66px)!important;line-height:.96!important}
+body .writing .copy h2 em{white-space:nowrap!important}
+@media(max-width:620px){
+  body .writing .copy h2{font-size:42px!important}
+  body .writing .copy h2 em{white-space:normal!important}
+  body .writing-art>.art-image{object-position:62% center!important}
+}
