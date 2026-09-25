@@ -79,6 +79,7 @@ type: page
       <a href="/blog/"><span>长文库</span><strong>文章与观察</strong><p>AI、互联网、加拿大、搞钱、踩坑，以及一个普通人不断重启自己的过程。</p></a>
       <a href="https://github.com/davinci-seven" target="_blank" rel="noopener noreferrer"><span>公开代码</span><strong>GitHub</strong><p>能开源的工具和实验放这里。没有“大神”人设，只有跑得起来的东西。</p></a>
       <a href="https://info.vcardvirtual.cc/" target="_blank" rel="noopener noreferrer"><span>互联网实验</span><strong>VCard</strong><p>海外订阅与支付相关的真实项目。它是我做过的事情之一，不是我的全部身份。</p></a>
+      <a href="/lab/"><span>Playground</span><strong>The Lab</strong><p>小游戏、WebGPU、AI、小工具。看到什么有意思的东西，就自己搞一个试试。</p></a>
     </div>
   </section>
 </section>
