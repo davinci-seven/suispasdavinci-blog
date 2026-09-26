@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0c0d">
+<title>THE LAB｜达芬七</title>
+<meta name="description" content="达芬七的实验室：小游戏、AI工具、计算器、本地模型和各种看到就想自己做一个的东西。">
+<link rel="icon" type="image/svg+xml" href="/img/seven-mark.svg">
+<style>
+:root{--bg:#0b0c0d;--panel:#121416;--ink:#f3ede3;--muted:#99928a;--red:#e5533d;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+a{color:inherit;text-decoration:none}.top{position:sticky;top:0;z-index:20;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(11,12,13,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900}.brand img{width:31px;height:31px;border-radius:9px}.brand small{display:block;font:700 7px monospace;letter-spacing:.18em;color:#777;margin-top:3px}.nav{display:flex;gap:22px;font-size:12px;font-weight:800}.hero{min-height:72vh;padding:120px 7vw 70px;display:grid;grid-template-columns:1.1fr .9fr;gap:6vw;align-items:end}.eyebrow{font:800 10px monospace;letter-spacing:.18em;color:var(--red);margin:0 0 22px}.hero h1{font-size:clamp(72px,9vw,150px);line-height:.8;letter-spacing:-.075em;margin:0;font-weight:950}.hero h1 em{display:block;color:var(--red);font-style:normal;font-family:Georgia,"STSong",serif;font-weight:600}.hero p{max-width:660px;color:#c7c0b8;font-size:18px;line-height:1.9}.hero-note{align-self:center;border:1px solid var(--line);border-radius:24px;padding:28px;background:linear-gradient(145deg,rgba(229,83,61,.11),rgba(255,255,255,.02));box-shadow:0 28px 80px rgba(0,0,0,.24)}.hero-note strong{display:block;font:900 14px monospace;letter-spacing:.1em;margin-bottom:18px}.hero-note p{font-size:14px;margin:0}.grid-wrap{padding:0 7vw 90px}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:26px}.section-head h2{font:600 clamp(42px,5vw,74px)/.95 Georgia,"STSong",serif;letter-spacing:-.05em;margin:0}.section-head p{max-width:520px;color:var(--muted);line-height:1.8}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}.card{position:relative;min-height:240px;border:1px solid var(--line);border-radius:18px;padding:24px;background:var(--panel);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,border-color .2s ease}.card:hover{transform:translateY(-4px);border-color:rgba(229,83,61,.65)}.card small{font:800 8px monospace;letter-spacing:.13em;color:#8e8982}.card h3{font:600 clamp(25px,2.4vw,38px)/1.05 Georgia,"STSong",serif;margin:14px 0 12px}.card p{color:#aaa39b;font-size:13px;line-height:1.75;margin:0 0 22px}.card b{margin-top:auto;font:800 9px monospace;letter-spacing:.12em}.featured{grid-column:span 7;min-height:360px;background:radial-gradient(circle at 78% 20%,rgba(63,92,122,.32),transparent 42%),linear-gradient(145deg,#11151a,#0c0e11)}.featured:after{content:"PLAY";position:absolute;right:24px;top:18px;font:950 clamp(40px,6vw,86px)/1 Arial;color:rgba(255,255,255,.035);letter-spacing:-.07em}.half{grid-column:span 5}.third{grid-column:span 4}.red{background:linear-gradient(145deg,rgba(229,83,61,.14),#111315)}.cream{background:linear-gradient(145deg,#191715,#111315)}.status{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid var(--line);border-radius:999px;width:max-content;font:800 8px monospace;letter-spacing:.1em;margin-top:8px}.dot{width:7px;height:7px;border-radius:50%;background:var(--red)}.footer{padding:58px 7vw 70px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:30px;color:#777;font:700 9px monospace;letter-spacing:.1em}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.nav{display:none}.featured,.half,.third{grid-column:span 12}.hero{padding-top:96px}.section-head{display:block}.section-head p{margin-top:18px}}
+@media(max-width:560px){.top{padding:0 18px}.hero,.grid-wrap,.footer{padding-left:18px;padding-right:18px}.hero h1{font-size:clamp(60px,21vw,92px)}.hero p{font-size:16px}.card{min-height:220px}}
+</style>
+</head>
+<body>
+<header class="top">
+<a class="brand" href="/"><img src="/img/seven-mark.svg" alt=""><span>达芬七<small>SUIS PAS DA VINCI</small></span></a>
+<nav class="nav"><a href="/">HOME</a><a href="/lab/">LAB</a><a href="/blog/">WRITING</a><a href="/story/">STORY</a><a href="/about/">ABOUT</a></nav>
+<a href="https://github.com/davinci-seven" target="_blank" rel="noopener noreferrer" style="font-size:11px;font-weight:900">GITHUB ↗</a>
+</header>
+<main>
+<section class="hero">
+<div><p class="eyebrow">THE LAB · BUILD WHAT LOOKS FUN</p><h1>THE<br><em>LAB.</em></h1><p>看到什么有意思的东西，我第一反应通常不是“这是什么”，而是：<strong>这玩意我能不能自己搞一个？</strong></p></div>
+<aside class="hero-note"><strong>NO GRAND ROADMAP</strong><p>小游戏、AI、本地模型、计算器、自动化。能跑起来的先扔进来，长成什么样以后再说。</p></aside>
+</section>
+<section class="grid-wrap">
+<div class="section-head"><h2>现在能玩的。</h2><p>有的是完整产品，有的是半成品，有的是单纯因为“太tm好玩了”所以值得留在这里。</p></div>
+<div class="grid">
+<a class="card featured red" href="/games/survived-another-month/"><small>GAME · PLAYABLE</small><h3>本月又活下来了</h3><p>加拿大账单闪避小游戏。一个本来只想玩梗，后来真做出来的东西。</p><span class="status"><i class="dot"></i>PLAYABLE</span><b>PLAY ↗</b></a>
+<a class="card half" href="/tools/run-worth/"><small>TOOL · INTERACTIVE</small><h3>润值计算器</h3><p>把“到底值不值得重启人生”拆成几笔更容易看清的账。</p><b>TRY TOOL ↗</b></a>
+<a class="card third" href="https://github.com/davinci-seven/davinci-zimage-ui" target="_blank" rel="noopener noreferrer"><small>LOCAL AI · OPEN SOURCE</small><h3>Z-Image UI</h3><p>本地AI不是跑通Demo就算完。把它做成普通人真能用的工作台。</p><b>VIEW REPO ↗</b></a>
+<a class="card third" href="/tools/return-illusion/"><small>TOOL · INTERACTIVE</small><h3>回国幻觉浓度</h3><p>你想回的是现实里的国内，还是脑子里那个已经不存在的平行宇宙？</p><b>TRY TOOL ↗</b></a><a class="card third" href="/blog/"><small>BUILD NOTES · WRITING</small><h3>折腾记录</h3><p>那些最终没有变成产品的东西，通常会变成文章、截图或者一条推。</p><b>READ ↗</b></a>
+</div>
+</section>
+</main>
+<footer class="footer"><span>BUILD · SHIP · PLAY · REPEAT</span><span>达芬七 / MONTRÉAL</span></footer>
+</body>
+</html>
