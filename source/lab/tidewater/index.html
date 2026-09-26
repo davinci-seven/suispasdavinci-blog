@@ -21,12 +21,12 @@
 <body>
 <header class="top"><a class="brand" href="/lab/"><img src="/img/seven-mark.svg" alt=""><span>SEVEN COAST<small>THE LAB / PROTOTYPE</small></span></a><a class="back" href="/lab/">← BACK TO LAB</a></header>
 <main>
-<section class="hero"><p class="eyebrow">WEBGPU · ISLAND · FISHING · EXPERIMENT</p><h1>SEVEN<br>COAST.</h1><p class="lead">先把一个真正能在浏览器里跑的世界接进来，再慢慢往里面塞“达芬七”：角色、彩蛋、站内入口，最后看能不能把个人主页的一部分直接做成可玩的世界。</p><div class="chips"><span class="chip">WEBGPU</span><span class="chip">WASD</span><span class="chip">FISHING</span><span class="chip">CHARACTER NEXT</span></div></section>
+<section class="hero"><p class="eyebrow">WEBGPU · ISLAND · FISHING · EXPERIMENT</p><h1>SEVEN<br>COAST.</h1><p class="lead">先把一个真正能在浏览器里跑的世界接进来，再慢慢往里面塞“达芬七”：角色、彩蛋、站内入口，最后看能不能把个人主页的一部分直接做成可玩的世界。</p><p class="note" style="margin-top:12px;color:#e4b77b"><strong>当前可玩的还是上游原版 Tidewater；Seven NPC 还没进这个 build，正在下一阶段做。</strong></p><div class="chips"><span class="chip">WEBGPU</span><span class="chip">WASD</span><span class="chip">FISHING</span><span class="chip">CHARACTER NEXT</span></div></section>
 <section class="stage-wrap"><div class="stage"><div class="loader" id="loader"><h2>先别急，第一次会编译很多shader。</h2><p>当前这里加载的是上游Tidewater原版Demo，用来验证WebGPU、输入、音频和嵌入体验。点击后才真正加载，避免你只是路过也把显卡叫醒。</p><div class="btns"><button class="btn primary" id="load" type="button">LOAD DEMO</button><a class="btn" href="https://dgreenheck.github.io/tidewater/" target="_blank" rel="noopener noreferrer">OPEN UPSTREAM ↗</a></div><p class="note">需要支持WebGPU的较新Chrome / Edge / Safari和相对靠谱的GPU。第一次加载可能要等一会儿。</p></div><iframe id="game" title="Tidewater upstream WebGPU demo" allow="fullscreen; autoplay" allowfullscreen></iframe></div></section>
 <section class="info">
 <article class="panel"><h3>第一阶段：先有人。</h3><ul><li>用Tidewater现成的Rocketbox角色管线做一个Seven NPC。</li><li>配色改成黑 / 奶白 / 橙红，身上放一个很小的“7”识别元素。</li><li>先做idle、wave、talk，不急着做完整第三人称主角。</li></ul></article>
 <article class="panel"><h3>第二阶段：让世界认识我。</h3><ul><li>电脑 / 路牌 / 小屋变成站内入口：Projects、Tools、Writing、Story。</li><li>靠近Seven时给一句很短的交互，不搞教程式长对话。</li><li>先做彩蛋和品牌感，再考虑任务和完整玩法。</li></ul></article>
-<article class="panel credit"><h3>Credits / License</h3><p>当前嵌入Demo来自 <a href="https://github.com/dgreenheck/tidewater" target="_blank" rel="noopener noreferrer"><strong>dgreenheck/tidewater</strong></a>。上游代码使用MIT License；角色来自Microsoft Rocketbox，其他第三方资源继续遵守各自许可证。这里目前只是原版Demo的技术验证入口，后续改造会保留许可证与credits。</p><p class="status">STATUS: shell ready · character integration next</p></article>
+<article class="panel credit"><h3>Credits / License</h3><p>当前嵌入Demo来自 <a href="https://github.com/dgreenheck/tidewater" target="_blank" rel="noopener noreferrer"><strong>dgreenheck/tidewater</strong></a>。上游代码使用MIT License；角色来自Microsoft Rocketbox，其他第三方资源继续遵守各自许可证。这里目前只是原版Demo的技术验证入口，后续改造会保留许可证与credits。</p><p class="status">STATUS: upstream demo playable · Seven NPC not shipped yet</p></article>
 </section>
 </main>
 <script>
