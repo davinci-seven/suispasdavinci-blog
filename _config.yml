@@ -1,7 +1,7 @@
 title: 达芬七｜Seven
-subtitle: 加拿大十年，把润学、出海和海外生活拆成工具和判断。
-description: 达芬七｜Seven 的个人主页。记录加拿大生活、移民幻觉、海外服务订阅、AI 工具和人生重启相关的文章与工具。
-keywords: 达芬七｜Seven,润值计算器,润前体检,加拿大生活,移民实战,海外生活,出海工具,虚拟卡,ChatGPT订阅,Claude订阅
+subtitle: AI、自动化、互联网产品与写作。做出来，跑起来，再把值得讲的讲清楚。
+description: 达芬七｜Seven 的个人主页。AI、自动化、互联网产品、写作，以及持续进行中的真实实验。
+keywords: 达芬七｜Seven,AI,本地AI,自动化,Agent,互联网产品,独立开发,GitHub,加拿大
 author: 达芬七｜Seven
 language: zh-CN
 timezone: America/Toronto
@@ -20,6 +20,8 @@ code_dir: downloads/code
 i18n_dir: ':lang'
 skip_render:
   - index.html
+  - story/**
+  - lab/**
   - cinema/**
   - games/survived-another-month/**
   - google*.html

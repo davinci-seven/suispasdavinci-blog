@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#081018">
+<title>Seven Coast｜达芬七 Lab</title>
+<meta name="description" content="Seven Coast：基于Tidewater的中文本地化与Seven改造实验。可玩版本独立部署，主站只保留轻量作品页。">
+<link rel="icon" type="image/svg+xml" href="/img/seven-mark.svg">
+<style>
+:root{--bg:#081018;--panel:#0d1620;--ink:#f4eee5;--muted:#9eabb2;--red:#e5533d;--line:rgba(255,255,255,.13);--blue:#78abc7}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 72% 0,#173044,#081018 44%);color:var(--ink);font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}a{color:inherit;text-decoration:none}
+.top{height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;border-bottom:1px solid var(--line);background:rgba(8,16,24,.84);backdrop-filter:blur(15px);position:sticky;top:0;z-index:30}.brand{display:flex;align-items:center;gap:10px;font-weight:900}.brand img{width:30px;height:30px;border-radius:9px}.brand small{display:block;color:#7f8990;font:700 7px monospace;letter-spacing:.16em}.back{font-size:11px;font-weight:900}
+.hero{padding:96px 6vw 48px;display:grid;grid-template-columns:1.05fr .95fr;gap:5vw;align-items:end}.eyebrow{font:800 10px monospace;letter-spacing:.18em;color:var(--red);margin:0 0 18px}.hero h1{font-size:clamp(62px,9vw,136px);line-height:.82;letter-spacing:-.075em;margin:0 0 24px}.hero p{max-width:760px;color:#bcc6cb;font-size:17px;line-height:1.85}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.chip{border:1px solid var(--line);border-radius:999px;padding:8px 11px;font:800 8px monospace;letter-spacing:.11em}
+.hero-card{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#05080b;box-shadow:0 30px 90px rgba(0,0,0,.35)}.hero-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}.hero-card div{padding:18px 20px;color:#aeb9bf;font-size:12px;line-height:1.7}
+.content{padding:10px 6vw 90px}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px}.shot{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#04080c}.shot img{display:block;width:100%;height:100%;object-fit:cover}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.panel{border:1px solid var(--line);border-radius:18px;padding:24px;background:rgba(255,255,255,.028)}.panel h2{font:600 30px/1.05 Georgia,"STSong",serif;margin:0 0 14px}.panel p,.panel li{color:#aeb8bd;line-height:1.8;font-size:14px}.panel ul{padding-left:20px}.status{color:#94dda0}.warn{color:#e3ba83}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.btn{display:inline-flex;padding:13px 16px;border-radius:10px;border:1px solid var(--line);font-size:11px;font-weight:900}.btn.primary{background:var(--red);border-color:var(--red)}.credits{margin-top:16px;border:1px solid var(--line);border-radius:18px;padding:22px;color:#87949b;font-size:12px;line-height:1.8}
+.footer{padding:44px 6vw 58px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#6f7b82;font:700 9px monospace;letter-spacing:.1em}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.gallery,.grid{grid-template-columns:1fr}.hero,.content,.footer{padding-left:18px;padding-right:18px}.top{padding:0 18px}}
+</style>
+</head>
+<body>
+<header class="top"><a class="brand" href="/lab/"><img src="/img/seven-mark.svg" alt=""><span>SEVEN COAST<small>THE LAB / PLAYABLE EXPERIMENT</small></span></a><a class="back" href="/lab/">← BACK TO LAB</a></header>
+<main>
+<section class="hero">
+<div>
+<p class="eyebrow">LOCALIZED FORK · WEBGPU · PLAYABLE</p>
+<h1>SEVEN<br>COAST.</h1>
+<p>它不是主站的一部分，也不该拖慢主站。Seven Coast是我拿一个很喜欢的WebGPU项目继续往前改的实验：做了简体中文本地化、Seven元素和自己的交互方向，能玩，但第一次会编译很多shader，所以单独放。</p>
+<div class="chips"><span class="chip">SIMPLIFIED CHINESE</span><span class="chip">SEVEN MASCOT</span><span class="chip">WEBGPU</span><span class="chip">HEAVY FIRST LOAD</span></div>
+<div class="actions"><span class="btn primary">PUBLIC BUILD · PREPARING</span><a class="btn" href="https://github.com/dgreenheck/tidewater" target="_blank" rel="noopener noreferrer">UPSTREAM ↗</a></div>
+</div>
+<div class="hero-card"><img src="/lab/seven-coast/cover.jpg" alt="Seven Coast gameplay screenshot"><div>本地化fork已经有可玩版本；公开部署地址确认后，这里只加一个外跳按钮，不重新把整个游戏嵌回主站。</div></div>
+</section>
+<section class="content">
+<div class="gallery"><div class="shot"><img src="/lab/seven-coast/cover.jpg" alt="Seven Coast pier gameplay"></div><div class="shot"><img src="/lab/seven-coast/beach.jpg" alt="Seven Coast beach gameplay"></div></div>
+<div class="grid">
+<article class="panel"><h2>为什么留下它。</h2><p>因为它不是“收藏了一个牛逼网站”，而是我真的fork、改过、做过本地化的东西。哪怕它很重，它也属于Lab。</p></article>
+<article class="panel"><h2>为什么不塞主页。</h2><p class="warn">第一次加载要编译大量shader，可能等一分钟甚至更久。</p><p>这种体验适合“我就是想玩”，不适合第一次打开个人主页。所以作品页轻量，游戏独立部署。</p></article>
+<article class="panel"><h2>下一步。</h2><ul><li>独立部署并保留首次加载提醒</li><li>继续整理Seven角色方向</li><li>如果值得，再和上游作者交流改造经验</li></ul></article>
+</div>
+<div class="credits"><strong>Credits.</strong> Seven Coast基于Dan Greenheck的Tidewater。上游代码使用MIT License；角色与第三方资产继续遵守原项目列出的许可证与credits。这里展示的是我的改造实验，不冒充原作。</div>
+</section>
+</main>
+<footer class="footer"><span>BUILD · SHIP · PLAY · REPEAT</span><span>达芬七 / THE LAB</span></footer>
+</body>
+</html>

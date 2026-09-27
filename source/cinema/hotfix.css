@@ -22,27 +22,27 @@ body .beijing-art{
   background-color:#aaa7a1!important;
 }
 body .montreal-art{
-  background-image:linear-gradient(180deg,rgba(10,20,30,.01),rgba(10,20,30,.05)),url('/cinema/img/montreal-arrival.webp?v=20')!important;
+  background-image:linear-gradient(180deg,#cbd9e3,#eef1f1)!important;
   background-position:56% center!important;
   background-color:#cbd9e3!important;
 }
 body .workflow-art{
-  background-image:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.06)),url('/cinema/img/workflow-automation.webp?v=20')!important;
+  background-image:linear-gradient(180deg,#101712,#0b0d0e)!important;
   background-position:54% center!important;
   background-color:#0b0d0e!important;
 }
 body .ai-art{
-  background-image:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.06)),url('/cinema/img/ai-production.webp?v=20')!important;
+  background-image:radial-gradient(circle at 72% 18%,#2b213c,#0b0d0e 58%)!important;
   background-position:56% center!important;
   background-color:#0b0d0e!important;
 }
 body .writing-art{
-  background-image:linear-gradient(180deg,rgba(255,255,255,.01),rgba(30,20,10,.04)),url('/cinema/img/writing-public.webp?v=20')!important;
+  background-image:linear-gradient(135deg,#d6c2a3,#efe4d1)!important;
   background-position:center,63% center!important;
   background-color:#d8c6aa!important;
 }
 body .final-art{
-  background-image:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.07)),url('/cinema/img/final-montreal.webp?v=20')!important;
+  background-image:linear-gradient(180deg,#09172a,#070a0e)!important;
   background-position:center,58% center!important;
   background-color:#0b0d0e!important;
 }
@@ -76,3 +76,278 @@ body .caption{display:block!important;z-index:4!important;background:rgba(8,10,1
   body .writing-art{background-position:center,63% center!important}
   body .final-art{background-position:center,58% center!important}
 }
+
+
+/* Iceberg brand refresh — homepage hierarchy */
+.brand-hero .copy h1{font-family:Arial,Helvetica,sans-serif;font-weight:950;letter-spacing:-.075em;line-height:.82;font-size:clamp(74px,8.8vw,138px);text-transform:uppercase}
+.brand-hero .copy h1 em{font-family:"STSong","Songti SC",serif;font-weight:600;letter-spacing:-.055em}
+.brand-hero .hero-cn{margin:24px 0 0;font-family:"STSong","Songti SC",serif;font-size:clamp(25px,2.4vw,38px);line-height:1.25;color:#f2ece2}
+.brand-hero .lead{margin-top:20px;font:800 11px/1.7 ui-monospace,Consolas,monospace;letter-spacing:.12em;color:#aaa49b}
+.brand-hero .iceberg-line{margin:22px 0 0;padding-left:16px;border-left:2px solid var(--red);font-size:15px;line-height:1.8;color:#d8d1c7}
+.brand-hero .btn.ghost,.final .btn.ghost{opacity:.68}
+.brand-hero .hero-art:before{content:"SELECTED\A PUBLIC\A WORK";white-space:pre;position:absolute;z-index:3;right:24px;top:24px;color:rgba(255,255,255,.76);font:900 clamp(20px,2.8vw,40px)/.92 Arial,sans-serif;letter-spacing:-.04em;text-align:right}
+.work-first{--scene-bg:#101214;--scene-ink:#f3ede3;--accent:#e55a3d}
+.work-first .work-scene{grid-template-columns:minmax(360px,.68fr) minmax(620px,1.32fr)}
+.work-first .work-grid{max-width:none;margin-top:0}
+.work-first .now-card{min-height:190px;padding:22px 22px;display:flex;flex-direction:column}
+.work-first .now-card.featured{grid-row:span 2;min-height:390px;background:linear-gradient(145deg,rgba(229,90,61,.12),rgba(255,255,255,.025));border-color:rgba(229,90,61,.5)}
+.work-first .now-card b{font-family:"STSong","Songti SC",serif;font-size:clamp(19px,1.7vw,28px);line-height:1.15}
+.work-first .now-card em{font-size:11px;line-height:1.75}
+.work-first .now-card strong{margin-top:auto;padding-top:20px;color:#d9d2c8;font:800 8px/1 ui-monospace,Consolas,monospace;letter-spacing:.12em}
+.work-first .now-card.mystery{background:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 12px,rgba(255,255,255,.01) 12px 24px)}
+.ai .quote em{color:#b798e9}
+.story-tease{--scene-bg:#d7d0c3;--scene-ink:#191817;--accent:#a84436}
+.story-tease .btn{color:#fff}
+@media(max-width:1050px){
+ .brand-hero .copy h1{font-size:clamp(68px,15vw,110px)}
+ .brand-hero .hero-art{order:initial}
+ .work-first .work-scene{grid-template-columns:1fr}
+ .work-first .now-grid{grid-template-columns:1fr 1fr}
+ .work-first .now-card.featured{grid-row:auto;min-height:210px}
+}
+@media(max-width:620px){
+ .brand-hero .copy h1{font-size:clamp(62px,19vw,88px)}
+ .brand-hero .hero-cn{font-size:25px}
+ .brand-hero .iceberg-line{font-size:14px}
+ .brand-hero .actions{gap:8px}
+ .brand-hero .btn{min-height:43px;padding:0 12px;font-size:10px}
+ .work-first .now-grid{grid-template-columns:1fr}
+ .work-first .now-card,.work-first .now-card.featured{min-height:175px}
+}
+
+
+/* Artwork fallback pass — use committed image assets so sections never render as empty panels. */
+body .ai-art{
+  background-image:
+    linear-gradient(90deg,rgba(8,10,12,.18),rgba(8,10,12,.02) 58%),
+    url('/cinema/img/hero-workspace-hd.webp?v=brand1')!important;
+  background-position:center,62% center!important;
+  background-color:#0b0d0e!important;
+}
+body .writing-art{
+  background-image:
+    linear-gradient(135deg,#d6c2a3,#efe4d1)!important;
+  background-position:center,58% center!important;
+  background-color:#cdbb9e!important;
+  box-shadow:0 28px 72px rgba(72,48,28,.22)!important;
+}
+body .writing-art:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(255,244,224,.02),rgba(20,12,8,.16)),
+    radial-gradient(circle at 78% 22%,rgba(207,73,55,.12),transparent 38%);
+}
+body .writing-art .caption{z-index:4!important}
+body .story-tease .beijing-art{
+  background-image:
+    linear-gradient(180deg,rgba(20,18,16,.02),rgba(20,18,16,.09)),
+    url('/cinema/img/beijing-departure.webp?v=brand1')!important;
+}
+@media(max-width:620px){
+  body .ai-art{background-position:center,68% center!important}
+  body .writing-art{background-position:center,64% center!important}
+}
+
+
+/* 2026-09-24 QA hardening: explicit image elements + product-like Seven mark. */
+body .brand{align-items:center;gap:10px}
+body .brand-mark{
+  display:block!important;
+  width:30px!important;
+  height:30px!important;
+  flex:0 0 30px;
+  border-radius:9px;
+  box-shadow:0 8px 22px rgba(0,0,0,.18);
+}
+body .art{position:relative}
+body .art>.art-image{
+  display:block!important;
+  position:absolute;
+  inset:0;
+  z-index:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  border-radius:inherit;
+}
+body .hero-art>.art-image{object-position:58% center}
+body .ai-art>.art-image{object-position:60% center;filter:saturate(.92) contrast(1.03) brightness(.86)}
+body .writing-art>.art-image{object-position:58% center;filter:saturate(.72) sepia(.08) contrast(.92) brightness(1.03)}
+body .beijing-art>.art-image{object-position:56% center}
+body .montreal-art>.art-image{object-position:56% center}
+body .final-art>.art-image{object-position:58% center}
+body .art:after{z-index:1!important}
+body .art .caption{z-index:4!important}
+body .writing-art:before{z-index:2!important}
+@media(max-width:620px){
+  body .brand-mark{width:28px!important;height:28px!important;flex-basis:28px}
+  body .hero-art>.art-image{object-position:66% center}
+  body .ai-art>.art-image{object-position:68% center}
+  body .writing-art>.art-image{object-position:64% center}
+}
+
+
+/* Native artwork pass — no fragile binary dependency for lab/writing/final/story system scenes. */
+body .ai-art{background-image:none!important;background:radial-gradient(circle at 72% 18%,#2b213c,#0b0d0e 58%)!important}
+body .writing-art{background-image:none!important;background:linear-gradient(135deg,#d6c2a3,#efe4d1)!important}
+body .final-art{background-image:none!important;background:#070a0e!important}
+body .montreal-art{background-image:none!important;background:linear-gradient(180deg,#cbd9e3,#edf1f2)!important}
+body .workflow-art{background-image:none!important;background:#101712!important}
+
+body .ai-art>.ai-window,
+body .writing-art>.paper,
+body .writing-art>.pen,
+body .final-art>.night-sky,
+body .final-art>.city-night,
+body .final-art>.river,
+body .final-art>.seven-silhouette,
+body .final-art>.final-note,
+body .montreal-art>.winter-sky,
+body .montreal-art>.snowfield,
+body .montreal-art>.mtl-buildings,
+body .montreal-art>.bus,
+body .montreal-art>.traveler,
+body .montreal-art>.map-card,
+body .workflow-art>.sheet,
+body .workflow-art>.terminal,
+body .workflow-art>.sticky{display:block!important}
+
+body .ai-art>.ai-window{z-index:2}
+body .writing-art>.paper,body .writing-art>.pen{z-index:2}
+body .final-art>.night-sky,body .final-art>.city-night,body .final-art>.river{z-index:0}
+body .final-art>.seven-silhouette,body .final-art>.final-note{z-index:2}
+body .montreal-art>.winter-sky,body .montreal-art>.snowfield,body .montreal-art>.mtl-buildings{z-index:0}
+body .montreal-art>.bus,body .montreal-art>.traveler,body .montreal-art>.map-card{z-index:2}
+body .workflow-art>.sheet,body .workflow-art>.terminal,body .workflow-art>.sticky{z-index:2}
+body .writing-art:before{z-index:1!important;background:radial-gradient(circle at 76% 18%,rgba(207,73,55,.14),transparent 40%),linear-gradient(180deg,rgba(255,255,255,.08),rgba(72,48,28,.08))!important}
+body .ai-art:after,body .writing-art:after,body .final-art:after,body .montreal-art:after,body .workflow-art:after{z-index:1!important}
+
+
+/* Premium photographic panels — real assets first, CSS scenery only as fallback. */
+body .premium-art{background:#0b0d0e!important}
+body .premium-art>.art-image{
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  border-radius:inherit!important;
+  z-index:0!important;
+  transform:none!important;
+}
+body .ai-art.premium-art>.art-image{
+  object-position:50% 52%!important;
+  filter:saturate(.96) contrast(1.03) brightness(.94)!important;
+}
+body .writing-art.premium-art{
+  background:#d5c2a4!important;
+  box-shadow:0 30px 80px rgba(76,50,27,.22)!important;
+}
+body .writing-art.premium-art>.art-image{
+  object-position:50% 55%!important;
+  filter:saturate(.92) contrast(1.02) brightness(1.00)!important;
+}
+body .writing-art.premium-art:before{
+  background:linear-gradient(180deg,rgba(255,247,232,.02),rgba(46,28,12,.08))!important;
+  z-index:1!important;
+}
+body .premium-final>.art-image{
+  object-position:84% 50%!important;
+  transform:scale(1.14)!important;
+  filter:saturate(.86) contrast(1.08) brightness(.72)!important;
+}
+body .premium-final:after{
+  background:linear-gradient(90deg,rgba(7,10,14,.08),rgba(7,10,14,.22)),linear-gradient(180deg,transparent 58%,rgba(3,5,8,.34))!important;
+}
+@media(max-width:620px){
+  body .ai-art.premium-art>.art-image{object-position:48% 50%!important}
+  body .writing-art.premium-art>.art-image{object-position:55% 54%!important}
+  body .premium-final>.art-image{object-position:78% 50%!important;transform:scale(1.08)!important}
+}
+
+
+/* 2026-09-24 stable rebuilt artwork pass. */
+body .premium-art>.art-image{
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  z-index:0!important;
+}
+body .ai-art.premium-art>.art-image{object-position:50% 50%!important;filter:none!important}
+body .writing-art.premium-art>.art-image{object-position:50% 50%!important;filter:none!important}
+body .montreal-art.premium-art>.art-image{object-position:50% 50%!important;filter:none!important}
+body .workflow-art.premium-art>.art-image{object-position:50% 50%!important;filter:none!important}
+body .premium-final>.art-image{object-position:50% 50%!important;transform:none!important;filter:none!important}
+body .writing .copy h2{font-size:clamp(46px,4.5vw,68px)!important;line-height:.96!important}
+body .writing .copy h2 em{white-space:nowrap}
+@media(max-width:620px){
+  body .writing .copy h2{font-size:44px!important}
+  body .writing .copy h2 em{white-space:normal}
+}
+
+
+/* 2026-09-24 final verified-artwork map: only byte-complete WebP files. */
+body .hero-art,
+body .ai-art,
+body .writing-art,
+body .beijing-art,
+body .montreal-art,
+body .workflow-art,
+body .final-art{
+  background-image:none!important;
+}
+body .hero-art>.art-image,
+body .ai-art>.art-image,
+body .writing-art>.art-image,
+body .beijing-art>.art-image,
+body .montreal-art>.art-image,
+body .workflow-art>.art-image,
+body .final-art>.art-image{
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  transform:none!important;
+  filter:none!important;
+}
+body .hero-art>.art-image{object-position:58% center!important}
+body .ai-art>.art-image{object-position:50% center!important}
+body .writing-art>.art-image{
+  object-position:58% center!important;
+  filter:sepia(.24) saturate(.78) brightness(1.12) contrast(.88)!important;
+}
+body .beijing-art>.art-image{object-position:center!important}
+body .montreal-art>.art-image{object-position:center!important}
+body .workflow-art>.art-image{object-position:center!important}
+body .final-art>.art-image{
+  object-position:center!important;
+  filter:saturate(.82) brightness(.72) contrast(1.08)!important;
+}
+body .writing-art:before{
+  background:linear-gradient(90deg,rgba(243,229,204,.16),rgba(243,229,204,.02) 58%),linear-gradient(180deg,rgba(255,255,255,.02),rgba(74,48,26,.12))!important;
+}
+body .final-art:after{
+  background:linear-gradient(90deg,rgba(7,10,14,.04),rgba(7,10,14,.14)),linear-gradient(180deg,transparent 58%,rgba(3,5,8,.28))!important;
+}
+body .writing .copy h2{font-size:clamp(45px,4.25vw,66px)!important;line-height:.96!important}
+body .writing .copy h2 em{white-space:nowrap!important}
+@media(max-width:620px){
+  body .writing .copy h2{font-size:42px!important}
+  body .writing .copy h2 em{white-space:normal!important}
+  body .writing-art>.art-image{object-position:62% center!important}
+}
+
+
+/* Brand polish: keep the hero image clean; the project context already lives in the caption. */
+body .brand-hero .hero-art:before{content:none!important;display:none!important}
