@@ -67,7 +67,7 @@ body .caption{display:block!important;z-index:4!important;background:rgba(8,10,1
   body .beijing-art,body .montreal-art{background-position:62% center!important}
 }
 @media(max-width:620px){
-  body .topbar{height:64px!important;background:var(--top-bg,rgba(9,10,11,.92))!important;border-bottom:1px solid rgba(128,128,128,.18)!important;-webkit-backdrop-filter:blur(16px) saturate(1.12);backdrop-filter:blur(16px) saturate(1.12)}
+  body .topbar{height:64px!important;background:var(--top-bg,rgba(9,10,11,.985))!important;border-bottom:1px solid rgba(128,128,128,.18)!important;-webkit-backdrop-filter:blur(16px) saturate(1.12);backdrop-filter:blur(16px) saturate(1.12)}
   body .chapter:not(.hero) .copy{padding-top:54px!important}
   body .hero-art{background-position:66% center!important}
   body .beijing-art,body .montreal-art{background-position:66% center!important}
