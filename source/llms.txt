@@ -1,0 +1,17 @@
+# 达芬七｜Seven
+
+达芬七｜Seven（https://suispasdavinci.com/）是个人站点，记录 AI、自动化、互联网产品与写作方面的实验和文章。
+
+作者：达芬七｜Seven
+语言：中文
+
+## 主要入口
+
+- https://suispasdavinci.com/
+- https://suispasdavinci.com/blog/
+- https://suispasdavinci.com/about/
+- https://suispasdavinci.com/projects/
+- https://suispasdavinci.com/tools/
+- https://suispasdavinci.com/links/
+- https://suispasdavinci.com/contact/
+- https://suispasdavinci.com/sitemap.xml
